@@ -8,7 +8,7 @@ use App\Http\Requests\UserFormEdit;
 use App\Models\User;
 use App\Models\Residencia;
 use Illuminate\Support\Facades\Crypt;
-
+use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
      public function __construct(){
@@ -35,6 +35,7 @@ class UserController extends Controller
   
     public function store(UserFormRequest $request)
     {
+        
         $usuario= new User();
         $usuario->name=$request->get('name');
         $usuario->email=$request->get('email');
@@ -43,15 +44,25 @@ class UserController extends Controller
         $usuario->residencia_id=$request->get('residencia');
         $usuario->apellido=$request->get('apellido');
         $usuario->rol=$request->get('rol');
-        if($request->hasFile('imagen'))
+       /* if($request->hasFile('imagen'))
         {
 
             $file=$request->imagen;
             $file->move(public_path() . '/img',$file->getClientOriginalName());
             $usuario->imagen=$file->getClientOriginalName();
+        }*/
+        $rol_numbre=0;
+        if($usuario->rol=="cliente_master2"){
+            $rol_numbre=8;
+        }else{
+            $rol_numbre=9;
         }
         $usuario->save();
+        DB::table('role_user')->insert(
+            array('role_id' => $rol_numbre, 'user_id' =>DB::table('users')->orderby('id', 'desc')->first()->id)
+        );
         $usuario->assignRole($request->get($usuario->rol));
+      
        
         return redirect('/user')->with('success','Usuario '.$usuario->name.' Registrado correctamente');
     }

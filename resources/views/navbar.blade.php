@@ -13,6 +13,7 @@
     <script src="{{asset('js/jquery-3.5.1.js')}}" ></script>
     <link rel="stylesheet" href="{{asset('fonts/style.css')}}">
     <link rel="stylesheet" href="{{url('plugins/fontawesome-free/css/all.min.css')}}">
+    <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
     <script src="{{asset('css/bootstrap.min.js')}}" ></script>
     <script src="{{asset('js/sweetalert.min.js')}}" ></script>
     
@@ -47,9 +48,16 @@
          <li class="nav-item active ml-3">
            <a class="nav-link" href="{{route('alicuota.index')}}">Alicuotas</a>
          </li>
-         <li class="nav-item active ml-3">
-           <a class="nav-link" href="{{route('reserva.index')}}">Reservas</a>
-         </li>
+         <li class="nav-item dropdown ml-3">
+          <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reservas</a>
+          <div class="dropdown-menu  bg-dark "> 
+          <a class="dropdown-item" href="{{route('albercas.index')}}"><i class="fas fa-swimmer"></i>  Piscinas</a>
+            <a class="dropdown-item  " href=""><i class="fas fa-gift"></i> Salon de eventos</a>
+            <a class="dropdown-item  " href=""><i class="fas fa-futbol"></i> Canchas de  Cemento 1</a>
+            <a class="dropdown-item  " href=""><i class="fas fa-futbol"></i>Canchas de  Cemento 2</a>
+            <a class="dropdown-item  " href=""><i class="fas fa-futbol"></i>Canchas de Cesped</a>
+          </div>
+        </li>
          <li class="flotar nav-item dropdown  active">
            <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->email}}</a>
            <div class="dropdown-menu bg-dark"> 

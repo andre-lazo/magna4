@@ -78,7 +78,7 @@ para el {{$albercas->start}} en el horario de {{$albercas->hora}} , para la dist
 <p class="centrado25 text-justify">Mis familiares que asistirán con mi supervisión son: <br>
   </p>
 
-  <table  BORDER=0.5 CELLPADDING=0 CELLSPACING=0  align="center"  >
+  <center><table  BORDER=0.5 CELLPADDING=0 CELLSPACING=0   align="center"  >
 
 <tr width="500" height="500">
 <td align="center" width="360" height="25"> Nombres y Apellidos  </td>
@@ -114,7 +114,7 @@ para el {{$albercas->start}} en el horario de {{$albercas->hora}} , para la dist
 </tr>
 
 
-</table>
+</table></center>
 <p class="centrado25" ><br><br>Dejo constancia que, me comprometo a respetar y cumplir las normas de bioseguridad y
 reglamentos establecidos para su uso y cualquier disposición que establezca el organismo
 administrador, con la finalidad de mitigar y evitar contagios del COVID-19.

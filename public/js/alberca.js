@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           //ESTO ES PARA DESACTIVAR LOS BOTONES MENOS EL DE AGREGAR   
           $("#horarios").show();
-          $('#Eliminar').hide();
+         
           $('#Agregar').show();
           //$('#btnAgregar').prop('disabled', false);
           //$('#btnModificar').prop('disabled', true);
@@ -82,8 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
          // $('#btnAgregar').prop('disabled', true);
           //$('#btnModificar').prop('disabled', false);
           $("#horarios").hide();
-          $('#Agregar').hide();
-          $('#Eliminar').show();
+        
+        
           //$('#btnEliminar').prop('disabled', false);
           $('#boton1').prop('disabled', true);
           $('#visi1').prop('disabled', true);
@@ -162,10 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
     });*/
     //ELIMINAR UN EVENTO
-    $('#btnEliminar').click(function(){
-      ObjEvento = recolectarDatosGUI("DELETE");
-      EnviarInformacion('/'+$('#txtId').val(), ObjEvento);
-    });
+    
     $('#btnVer').click(function(){
         $('#exampleModal').modal();
     });
@@ -249,33 +246,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
   });
-  document.getElementById("boton1").onclick = function(){
-    document.getElementById("txtHora2").value = "08 am - 09 am";
-}
-document.getElementById("boton2").onclick = function(){
-    document.getElementById("txtHora2").value = "09 am - 10 am";
-}
-document.getElementById("boton3").onclick = function(){
-    document.getElementById("txtHora2").value = "10 am - 11 am";
-}
-document.getElementById("boton4").onclick = function(){
-    document.getElementById("txtHora2").value = "11 am - 12 pm";
-}
-document.getElementById("boton5").onclick = function(){
-    document.getElementById("txtHora2").value = "12 pm - 13 pm";
-}
-document.getElementById("boton6").onclick = function(){
-    document.getElementById("txtHora2").value = "14 pm - 15 pm";
-}
-document.getElementById("boton7").onclick = function(){
-    document.getElementById("txtHora2").value = "15 pm - 16 pm";
-}
-document.getElementById("boton8").onclick = function(){
-    document.getElementById("txtHora2").value = "16 pm - 17 pm";
-}
-document.getElementById("boton9").onclick = function(){
-    document.getElementById("txtHora2").value = "17 pm - 18 pm";
-}
-document.getElementById("guarda").onclick = function(){
-    alert('Guardado Exitosamente.');
-}
+  

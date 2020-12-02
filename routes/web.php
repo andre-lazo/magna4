@@ -49,7 +49,6 @@ Route::get('/', function (Request $request) {
     Route::resource('eventos', 'App\Http\Controllers\EventosController');
     Route::resource('canchas', 'App\Http\Controllers\CanchasController');
     Route::resource('albercas', 'App\Http\Controllers\AlbercasController');
-    Route::resource('picinas', 'App\Http\Controllers\PicinasController');
     Route::resource('campos', 'App\Http\Controllers\CamposController');
            });
     

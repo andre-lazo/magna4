@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{{url('plugins/fontawesome-free/css/all.min.css')}}">
     <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
     <script src="{{asset('css/bootstrap.min.js')}}" ></script>
+    <script src="{{asset('js/sweetalert.min.js')}}" ></script>
+
     @yield('scripts')
  <style>
    .flotar{
@@ -49,7 +51,7 @@
          <li class="nav-item dropdown ml-3">
            <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reservas</a>
            <div class="dropdown-menu  bg-dark"> 
-           <a class="dropdown-item" href=""><i class="fas fa-swimmer"></i>  Piscinas</a>
+           <a class="dropdown-item" href="{{route('albercas.index')}}"><i class="fas fa-swimmer"></i>  Piscinas</a>
              <a class="dropdown-item " href=""><i class="fas fa-gift"></i> Salon de eventos</a>
              <a class="dropdown-item " href=""><i class="fas fa-futbol"></i> Canchas</a>
            </div>
@@ -86,5 +88,6 @@
         Teléfono Garita Magna: +593 4-275-3361. <br>
         Celular Garita Magna: +593 99 989 6250.  
       </footer></center>
+      @include('sweet::alert')
 </body> 
 </html>
