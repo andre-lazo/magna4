@@ -1,7 +1,7 @@
 @extends('navbar_user')
 <style>
     body{
-        background: url({{asset('img/entrada.jpeg')}}) no-repeat center center  fixed;
+        background: url({{asset('img/cancha.jpg')}}) no-repeat center center  fixed;
         font-family: 'Titillium Web', sans-serif;
         background-size: cover; 
        

@@ -27,16 +27,9 @@
                  
      <div id="horarios">
          <center>
-        @if(!$hora1) <input type="button"  onclick="cargar()" class="boton btn btn-primary mr-4" value=" 08 am - 09 am"> @endif
-        @if (!$hora2)    <input type="button"  onclick="cargar()" class="boton btn btn-primary mr-4" value=" 09 am - 10 am">@endif
-        @if (!$hora3)    <input type="button"  onclick="cargar()" class="boton btn btn-primary mr-4" value=" 10 am - 11 am"><br><br>@endif
-        @if (!$hora4)    <input type="button"  onclick="cargar()" class="boton btn btn-primary mr-4" value=" 11 am - 12 pm">@endif
-        @if (!$hora5)     <input type="button"  onclick="cargar()" class="boton btn btn-primary mr-4" value=" 12 pm - 13 pm">@endif
-        @if (!$hora6)     <input type="button"  onclick="cargar()" class="boton btn btn-primary mr-4" value=" 13 pm - 14 pm"><br><br>@endif
-        @if (!$hora7)     <input type="button"  onclick="cargar()" class="boton btn btn-primary mr-4" value=" 14 pm - 15 pm">@endif
-        @if (!$hora8)    <input type="button"  onclick="cargar()" class="boton btn btn-primary mr-4" value=" 15 pm - 16 pm">@endif
-        @if (!$hora9)    <input type="button"  onclick="cargar()" class="boton btn btn-primary mr-4" value=" 16 pm - 17 pm">@endif
-        @if (!$hora10)    <input type="button"  onclick="cargar()" class="boton btn btn-primary mr-4" value=" 17 pm - 18 pm">@endif
+        @if(!$hora1) <input type="button"  onclick="cargar()" class="boton btn btn-primary mr-4"     value=" 09 am - 14 pm"> @endif
+        @if (!$hora2)    <input type="button"  onclick="cargar()" class="boton btn btn-primary mr-4" value=" 15 pm - 20 pm">@endif
+        @if (!$hora3)    <input type="button"  onclick="cargar()" class="boton btn btn-primary mr-4" value=" 21 pm - 02 am"><br><br>@endif
          </center>
      </div>
      {!! Form::open(['url' => 'eventos']) !!}

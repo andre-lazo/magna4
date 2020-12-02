@@ -1,22 +1,28 @@
 @extends('navbar_user')
 
 @section('scripts')
-    <link rel="stylesheet" href="{{asset('fullcalendar/core/main.css')}}">
-    <link rel="stylesheet" href="{{asset('fullcalendar/daygrid/main.css')}}">
-    <link rel="stylesheet" href="{{asset('fullcalendar/list/main.css')}}">
-    <link rel="stylesheet" href="{{asset('fullcalendar/timegrid/main.css')}}">
+<center><h1 class="pt-5">Seccion de Reservacion de la Alberca</h1></center>
 
+  
+      <link rel="stylesheet" href="{{asset('fullcalendar/core/main.css')}}">
+      <link rel="stylesheet" href="{{asset('fullcalendar/daygrid/main.css')}}">
+      <link rel="stylesheet" href="{{asset('fullcalendar/list/main.css')}}">
+      <link rel="stylesheet" href="{{asset('fullcalendar/timegrid/main.css')}}">
+  
+  
+      <script src="{{asset('fullcalendar/core/main.js')}}" defer></script>
+      <script src="{{asset('fullcalendar/interaction/main.js')}}" defer></script>
+      <script src="{{asset('fullcalendar/daygrid/main.js')}}" defer></script>
+      <script src="{{asset('fullcalendar/list/main.js')}}" defer></script>
+      <script src="{{asset('fullcalendar/timegrid /main.js')}}" defer></script>
+      <script>
+         
+          var url_show="{{url('/albercas/show')}}"; 
+      </script>
+      <script src="{{asset('js/calendar.js')}}" defer></script>
+  
 
-    <script src="{{asset('fullcalendar/core/main.js')}}" defer></script>
-    <script src="{{asset('fullcalendar/interaction/main.js')}}" defer></script>
-    <script src="{{asset('fullcalendar/daygrid/main.js')}}" defer></script>
-    <script src="{{asset('fullcalendar/list/main.js')}}" defer></script>
-    <script src="{{asset('fullcalendar/timegrid /main.js')}}" defer></script>
-    <script>
-       
-        var url_show="{{url('/albercas/show')}}"; 
-    </script>
-    <script src="{{asset('js/calendar.js')}}" defer></script>
+     
  
 @endsection
 

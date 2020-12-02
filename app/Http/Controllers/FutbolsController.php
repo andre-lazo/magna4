@@ -60,6 +60,15 @@ class FutbolsController extends Controller
             $i++;
         }
     }
+    $todo=false;
+    if($bool1==true&&$bool2==true&&$bool3==true&&
+       $bool4==true&&$bool5==true&&$bool6==true&&
+       $bool7==true&&$bool8==true&&$bool9==true&&
+       $bool10==true
+       ){
+        $todo=true;
+    }
+      if(!$todo){
       if($i<2){
       return view('futbols.create',['arreglo'=>$arreglo,
       'hora1'=>$bool1,
@@ -76,6 +85,9 @@ class FutbolsController extends Controller
       ]);
     }else{
           return redirect('/futbols')->with('warning','No puede reservar mas de dos veces en un dia esta locacion');
+      }}else{
+        return redirect('/futbols')->with('warning','Lo sentimos no quedan horas disponibles para reservar en este dia');
+
       }
     }
 
@@ -85,7 +97,7 @@ class FutbolsController extends Controller
        
         $futbol = new Futbol();
         $futbol->title = request('txtHora2');
-        $futbol->hora = 
+        $futbol->hora = request('txtHora2');
         $futbol->usuario =request('txtUsuario');
         $futbol->visi1 = request('visi1');
         $futbol->pare1 = request('parent1');

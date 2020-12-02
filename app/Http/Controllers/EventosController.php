@@ -26,13 +26,6 @@ class EventosController extends Controller
         $bool1=false;   
         $bool2=false;   
         $bool3=false;   
-        $bool4=false;   
-        $bool5=false;   
-        $bool6=false;   
-        $bool7=false;   
-        $bool8=false;   
-        $bool9=false;   
-        $bool10=false;   
         $arreglo= array();
         $hora=$request->get('txtFecha');
         $eventos=Evento::all();
@@ -42,16 +35,9 @@ class EventosController extends Controller
             $a= new Evento();
             $a=$item;
             array_push($arreglo,$a);
-            if($a->hora=='17 pm - 18 pm'){$bool10=true;}
-            if($a->hora=='08 am - 09 am'){$bool1=true;}
-            if($a->hora=='09 am - 10 am'){$bool2=true;}
-            if($a->hora=='10 am - 11 am'){$bool3=true;}
-            if($a->hora=='11 am - 12 pm'){$bool4=true;}
-            if($a->hora=='12 pm - 13 pm'){$bool5=true;}
-            if($a->hora=='13 pm - 14 pm'){$bool6=true;}
-            if($a->hora=='14 pm - 15 pm'){$bool7=true;}
-            if($a->hora=='15 pm - 16 pm'){$bool8=true;}
-            if($a->hora=='16 pm - 17 pm'){$bool9=true;}
+            if($a->hora=='09 am - 14 pm'){$bool1=true;}
+            if($a->hora=='15 pm - 20 pm'){$bool2=true;}
+            if($a->hora=='21 pm - 02 am'){$bool3=true;}
           }
       }
       
@@ -61,22 +47,23 @@ class EventosController extends Controller
             $i++;
         }
     }
-      if($i<2){
-      return view('eventos.create',['arreglo'=>$arreglo,
-      'hora1'=>$bool1,
-      'hora2'=>$bool2,
-      'hora3'=>$bool3,
-      'hora4'=>$bool4,
-      'hora5'=>$bool5,
-      'hora6'=>$bool6,
-      'hora7'=>$bool7,
-      'hora8'=>$bool8,
-      'hora9'=>$bool9,
-      'hora10'=>$bool10,
-      'fecha'=>$hora
-      ]);
-    }else{
-          return redirect('/eventos')->with('warning','No puede reservar mas de dos veces en un dia esta locacion');
+    $todo=false;
+    if($bool1==true&&$bool2==true&&$bool3==true){
+        $todo=true;
+    }
+      if(!$todo){
+        if($i<1){
+            return view('eventos.create',['arreglo'=>$arreglo,
+            'hora1'=>$bool1,
+            'hora2'=>$bool2,
+            'hora3'=>$bool3,
+            'fecha'=>$hora
+            ]);
+          }else{
+                return redirect('/eventos')->with('warning','No puede reservar mas de una vez en un dia esta locacion');
+            }
+      }else{
+        return redirect('/eventos')->with('warning','Lo sentimos no quedan horas disponibles para reservar en este dia');
       }
     }
 

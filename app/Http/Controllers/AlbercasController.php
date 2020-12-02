@@ -60,6 +60,15 @@ class AlbercasController extends Controller
             $i++;
         }
     }
+    $todo=false;
+    if($bool1==true&&$bool2==true&&$bool3==true&&
+       $bool4==true&&$bool5==true&&$bool6==true&&
+       $bool7==true&&$bool8==true&&$bool9==true&&
+       $bool10==true
+       ){
+        $todo=true;
+    }
+      if(!$todo){
       if($i<2){
       return view('albercas.create',['arreglo'=>$arreglo,
       'hora1'=>$bool1,
@@ -76,6 +85,9 @@ class AlbercasController extends Controller
       ]);
     }else{
           return redirect('/albercas')->with('warning','No puede reservar mas de dos veces en un dia esta locacion');
+      }}else{
+        return redirect('/albercas')->with('warning','Lo sentimos no quedan horas disponibles para reservar en este dia');
+
       }
     }
 

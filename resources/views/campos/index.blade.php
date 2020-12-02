@@ -1,6 +1,8 @@
 @extends('navbar_user')
 
 @section('scripts')
+<center><h1 class="pt-5">Seccion de Reservacion de la Cancha de Cemento 2</h1></center>
+
     <link rel="stylesheet" href="{{asset('fullcalendar/core/main.css')}}">
     <link rel="stylesheet" href="{{asset('fullcalendar/daygrid/main.css')}}">
     <link rel="stylesheet" href="{{asset('fullcalendar/list/main.css')}}">
