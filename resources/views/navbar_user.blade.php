@@ -49,13 +49,15 @@
        
         
          <li class="nav-item dropdown ml-3">
-           <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reservas</a>
-           <div class="dropdown-menu  bg-dark"> 
-           <a class="dropdown-item" href="{{route('albercas.index')}}"><i class="fas fa-swimmer"></i>  Piscinas</a>
-             <a class="dropdown-item " href=""><i class="fas fa-gift"></i> Salon de eventos</a>
-             <a class="dropdown-item " href=""><i class="fas fa-futbol"></i> Canchas</a>
-           </div>
-         </li>
+          <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reservas</a>
+          <div class="dropdown-menu  bg-dark"> 
+          <a class="dropdown-item" href="{{route('albercas.index')}}"><i class="fas fa-swimmer"></i>  Piscinas</a>
+            <a class="dropdown-item " href="{{route('eventos.index')}}"><i class="fas fa-gift"></i> Salon de eventos</a>
+            <a class="dropdown-item " href="{{route('canchas.index')}}"><i class="fas fa-futbol"></i> Cancha Cementeto 1</a>
+            <a class="dropdown-item " href="{{route('campos.index')}}"><i class="fas fa-futbol"></i> Cancha Cemento 2</a>
+            <a class="dropdown-item " href="{{route('futbols.index')}}"><i class="fas fa-futbol"></i> Cancha Futbol</a>
+          </div>
+        </li>
        
         <li class="flotar nav-item dropdown  active">
          <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->email}}</a>

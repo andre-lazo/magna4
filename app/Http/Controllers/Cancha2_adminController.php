@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Futbol;
+use App\Models\Campo;
 use Illuminate\Http\Request;
 
 class Cancha2_adminController extends Controller
@@ -13,7 +13,7 @@ class Cancha2_adminController extends Controller
      */
     public function index()
     {
-        $eventos = Futbol::all();
+        $eventos = Campo::all();
 
         return view('reservas.cancha_c2', ['eventos'=>$eventos]);
     }
@@ -47,7 +47,7 @@ class Cancha2_adminController extends Controller
      */
     public function show($id)
     {
-        $evento= Futbol::findOrFail($id);
+        $evento= Campo::findOrFail($id);
         return view('reservas.view',['evento'=>$evento]);
     }
 

@@ -28,6 +28,9 @@ Route::get('/', function (Request $request) {
         return view('user_cliente.index')->with('success','Bienvenido Usuario'.Auth::user()->name);
         }
     });
+    Route::get('/logout', function () {
+        return view('auth.login');
+    });
 
 
  
@@ -56,5 +59,6 @@ Route::get('/', function (Request $request) {
     Route::resource('canchas', 'App\Http\Controllers\CanchasController');
     Route::resource('albercas', 'App\Http\Controllers\AlbercasController');
     Route::resource('campos', 'App\Http\Controllers\CamposController');
+    Route::resource('futbols', 'App\Http\Controllers\FutbolsController');
            });
     

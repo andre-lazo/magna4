@@ -14,7 +14,7 @@
     <script src="{{asset('fullcalendar/timegrid /main.js')}}" defer></script>
     <script>
        
-        var url_show="{{url('/campos/show')}}"; 
+        var url_show="{{url('/futbols/show')}}"; 
     </script>
     <script src="{{asset('js/calendar.js')}}" defer></script>
  
@@ -148,15 +148,15 @@ body{
     </tr>
   </thead>
   <tbody>
-    @foreach($campos as $campo)
-    @include('campos.model_delete')
+    @foreach($futbols as $futbol)
+    @include('futbols.model_delete')
     <tr>
-      <th scope="row">{{$campo->id}}</th>
-      <td>{{$campo->usuario}}</td>
-      <td>{{$campo->hora}}</td>
-      <td>{{$campo->start}}</td>
-      <td class="text-center"><a href="{{route('campos.edit',$campo->id)}}" class="btn btn-success"><i class="far fa-eye"></i>Pdf</a></td>
-      <td class="text-center"><button type="button" class=" btn btn-outline-danger" data-toggle="modal" data-target="#modalEliminar-{{$campo->id}}"><i class="far fa-trash-alt"></i> Eliminar</button></td>
+      <th scope="row">{{$futbol->id}}</th>
+      <td>{{$futbol->usuario}}</td>
+      <td>{{$futbol->hora}}</td>
+      <td>{{$futbol->start}}</td>
+      <td class="text-center"><a href="{{route('futbols.edit',$futbol->id)}}" class="btn btn-success"><i class="far fa-eye"></i>Pdf</a></td>
+      <td class="text-center"><button type="button" class=" btn btn-outline-danger" data-toggle="modal" data-target="#modalEliminar-{{$futbol->id}}"><i class="far fa-trash-alt"></i> Eliminar</button></td>
 
 
     </tr>
@@ -165,7 +165,7 @@ body{
 </table>
 </div>
 <!--MODAL-->
-<form action="{{route('campos.create')}}">
+<form action="{{route('futbols.create')}}">
   @csrf
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">

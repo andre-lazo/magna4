@@ -53,13 +53,15 @@
              </select>
             </div>
             <center>       <br><label for="message-text" class="col-form-label">IMAGEN DEL ULTIMO CENSO AL RESIDENTE:</label></center>
-              <input   type="file" class="form-control" name="imagen" id="recipient-name">
+            <input   type="file" class="form-control mb-4" name="imagen" id="recipient-name">
              
-            </div>
+            
+          
          
-          <button type="submit" class="btn btn-primary"><i class="fas fa-save"> Guardar</i></button>
-          <button type="reset" class="btn btn-danger"><i class="fas fa-window-close"> Cancelar</i> </button>
-  
+            <center >
+             <button type="submit" class="btn btn-primary"><i class="fas fa-save"> Guardar</i></button>
+             <button type="reset" class="btn btn-danger"><i class="fas fa-window-close"> Cancelar</i> </button>
+            </center>
         </form>
       
     </div>

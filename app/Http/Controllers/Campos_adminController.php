@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Campo;
+use App\Models\Futbol;
 
 use Illuminate\Http\Request;
 
@@ -14,7 +14,7 @@ class Campos_adminController extends Controller
      */
     public function index()
     {
-        $evento= Campo::all();
+        $evento= Futbol::all();
         return view('reservas.cancha_cesped',['eventos'=>$evento]);
     }
 
@@ -47,7 +47,7 @@ class Campos_adminController extends Controller
      */
     public function show($id)
     {
-        $evento= Campo::findOrFail($id);
+        $evento= Futbol::findOrFail($id);
         return view('reservas.view',['evento'=>$evento]);
     }
 

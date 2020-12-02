@@ -16,7 +16,7 @@
        
         var url_show="{{url('/albercas/show')}}"; 
     </script>
-    <script src="{{asset('js/alberca.js')}}" defer></script>
+    <script src="{{asset('js/calendar.js')}}" defer></script>
  
 @endsection
 
