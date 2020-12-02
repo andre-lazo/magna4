@@ -20,14 +20,14 @@
     <section class="mt-5 ">
       <div class="ml-4 pt-5 " >
         <h1 >Reporte de alicuotas del Usuario: {{$alicuota->nombre}} {{$alicuota->apellido}}</h1>
+        <label class="text-center card h1  p-1" style="border-color: orange;" id="r" >ULTIMA ACTUALIZACION - -> {{$alicuota->updated_at}} </label>
       </div>
     <div class="row">
-      
       <div class="col-xs-12 col-lg-6 mt-5">
         
         <img src="img/businessman-3213659_1920.jpg" class="mx-auto"  width="100%" height="100%"></div>
       <div class="col-xs-12 col-lg-3 mt-5 ">
-        <label class="text-center card   p-1" style="border-color: orange;" id="r" >ULTIMA ACTUALIZACION - -> </label>
+       
       
          <label class="text-center card   p-1" style="border-color: orange;" id="r" >ID VILLA - -> </label>
          <label class="text-center card   p-1" style="border-color: orange;" id="r" >PROPIETARIO - -> </label>
@@ -43,7 +43,7 @@
        
       </div>
       <div class="col-xs-12 col-lg-3 mt-5">
-        <label class="text-center card p-1" id="dato">{{$alicuota->updated_at}}</label>
+       
 
           <label class="text-center card p-1" id="dato">{{$alicuota->cod_MnzV}}</label>
           <label class="text-center card p-1" id="dato">{{$alicuota->nombre}} {{$alicuota->apellido}}</label>
