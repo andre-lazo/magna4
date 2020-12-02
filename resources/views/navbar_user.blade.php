@@ -63,6 +63,7 @@
          <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->email}}</a>
          <div class="dropdown-menu bg-dark"> 
            <a class="dropdown-item " href="{{route('user_cliente.show',Crypt::encrypt(Auth::user()->id))}}"><i class="fas fa-user"> </i> Perfil</a>
+           <a class="dropdown-item " href="{{route('configuracion_cliente.index')}}"><i class="fas fa-user-cog"></i> Configuracion</a>
            <form class="nav-link" method="POST" action="{{ route('logout') }}">
              @csrf
  

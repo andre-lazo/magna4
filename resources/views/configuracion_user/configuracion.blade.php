@@ -1,4 +1,4 @@
-@extends('navbar')
+@extends('navbar_user')
 
 @section('content')
 <div class="row" >
@@ -7,64 +7,61 @@
     </div>
     <div class="col-xs-12 col-lg-6"> 
       
-        <center><h2 class="mt-3">Usuario: {{$user->name}}</h2></center>
-        <h1 class=" text-center mb-5 mt-2">FORMULARIO DE ACTUALIZACION</h1>
+        <center><h2 class="pt-5">Usuario: {{$user->name}}</h2></center>
+        <h1 class=" text-center mb-5 mt-2">FORMULARIO DE ACTULIZACION DE SUS DATOS Y CAMBIO DE CONTRASEÑA</h1>
         
- 
-    <form action="{{ route('user.update', $user->id) }}" method="POST" class="mx-auto" enctype="multipart/form-data" style="max-width: 20rem">
+<center><span class="text-danger font-weight-bold">!!AL ACTUALIZAR LA CONTRASEÑA EL SISTEMA LO REDIRIGIRA AL INICIO DE SESION Y DEBERA VOLVER A INICIAR SESION!!</span>
+</center> 
+    <form action="{{ route('configuracion_cliente.update', $user->id) }}" method="POST" class="mx-auto" enctype="multipart/form-data" style="max-width: 20rem">
         @method('PATCH')
         @csrf
   
-          <div class="form-group">
-           <center> <label for="exampleInputEmail1"><i class="far fa-user"></i> NOMBRE</label></center>
-            <input  type="text" class="form-control" value="{{$user->name}}" onkeypress=" return sololetra(event)" name="name" placeholder="ingrese su nombre">
+          <div class="form-group mt-3">
+           <center> <label for="exampleInputEmail1"><i class="far fa-user"></i> NOMBRE</label></center>  
+            <input  type="text" class="form-control" value="{{$user->name}}" onkeypress=" return sololetra(event)" name="name" placeholder="ingrese su nombre" readonly>
             <center> <label for="exampleInputEmail1" class="mt-2"><i class="far fa-user"></i> APELLIDO</label></center>
-            <input  type="text" class="form-control" value="{{$user->apellido}}" name="apellido" onkeypress=" return sololetra(event)" placeholder="ingrese su nombre">
+            <input  type="text" class="form-control" value="{{$user->apellido}}" name="apellido" onkeypress=" return sololetra(event)" placeholder="ingrese su nombre"  readonly>
 
           </div>
          
           <div class="form-group">
-           <center> <label for="email"><i class="far fa-envelope"></i> Email </label></center>
-            <input type="email" class="form-control" value="{{$user->email}}" name="email" placeholder="ingrese su email" >
+           <center> <label fors="email"><i class="far fa-envelope"></i> Email </label></center>
+            <input type="email" class="form-control" value="{{$user->email}}" name="email" placeholder="ingrese su email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
           </div>
           <div class="form-group">
             <center> <label ><i class="fas fa-id-card"></i> Cedula </label></center>
-             <input maxlength="10" value="{{$user->cedula}}" onkeypress=" return solonum(event)" type="text" class="form-control" name="cedula" placeholder="ingrese numero de cedula" >
+             <input maxlength="10" value="{{$user->cedula}}" onkeypress=" return solonum(event)" type="text" class="form-control" name="cedula" placeholder="ingrese numero de cedula" readonly >
            </div>
            <div class="form-group">
             <center> <label ><i class="fas fa-house-user"></i> Codigo de Residencia </label></center>
-             <select name="residencia"  class="form-control">
+             <select name="residencia" disabled class="form-control">
               <option value="{{$user->residencia_id}}">{{$user->residencia_id}}</option>
                @foreach ($residencias as $residencia)
                <option value="{{$residencia->residencia_id}}">{{$residencia->residencia_id}}</option>
                @endforeach
              </select>
            </div>
-           <h6 class="text-center text-danger font-weight-bold">(El cambio de contraseña es opcional)</h6>
+           <div class="form-group">
+           <center> <label for="password"><i class="fas fa-unlock-alt"></i>  Contraseña Antigua</label></center>
+            <input type="password" class="form-control" name="passwordA">
+          </div>
           <div class="form-group">
-           <center> <label for="password"><i class="fas fa-unlock-alt"></i> Password</label></center>
+           <center> <label for="password"><i class="fas fa-unlock-alt"></i> Nueva Contraseña</label></center>
             <input type="password" class="form-control" name="password">
           </div>
           <div class="form-group">
-          <center>  <label for="password"><i class="fas fa-unlock-alt"></i> Confirme Password</label></center>
+          <center>  <label for="password"><i class="fas fa-unlock-alt"></i> Confirme Nueva contraseña</label></center>
             <input type="password" class="form-control" name="password_confirmation">
           </div>
-          <center>       <br><label for="message-text" class="col-form-label">IMAGEN DEL ULTIMO CENSO AL RESIDENTE:</label></center>
-              <input   type="file" class="form-control mb-4" name="imagen" id="recipient-name">
-             
-             <center> @if($user->imagen!="")
-              <img src="{{asset('/img/'.$user->imagen)}}" alt="{{$user->imagen}}" height="50px" width="50px"> 
-              @endif</center>
+         
           
          
-         <center >
           <button type="submit" class="btn btn-primary"><i class="fas fa-save"> Guardar</i></button>
           <button type="reset" class="btn btn-danger"><i class="fas fa-window-close"> Cancelar</i> </button>
-         </center>
   
         </form>
-      </div>
+      
     </div>
 </div>
 

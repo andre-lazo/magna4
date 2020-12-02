@@ -60,5 +60,6 @@ Route::get('/', function (Request $request) {
     Route::resource('albercas', 'App\Http\Controllers\AlbercasController');
     Route::resource('campos', 'App\Http\Controllers\CamposController');
     Route::resource('futbols', 'App\Http\Controllers\FutbolsController');
+    Route::resource('configuracion_cliente', 'App\Http\Controllers\ConfiguracionController');
            });
     

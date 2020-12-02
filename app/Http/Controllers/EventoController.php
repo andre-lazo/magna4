@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Crypt;
 use App\Models\Evento;
 use Illuminate\Http\Request;
 
@@ -26,7 +26,7 @@ class EventoController extends Controller
 
     public function show($id)
     {
-        $evento= Evento::findOrFail($id);
+        $evento= Evento::findOrFail(Crypt::decrypt($id));
         return view('reservas.view',['evento'=>$evento]);
     }
 

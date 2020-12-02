@@ -35,7 +35,7 @@
               <td class="text-center">{{$evento->usuario}}</td>
               <td class="text-center">{{$evento->start}}</td>
               <td class="text-center">{{$evento->hora}}</td>
-              <td class="text-center"><a href="{{route('campo.show',$evento->id)}}" class="btn btn-secondary"><i class="far fa-eye"></i> Ver</a></td>
+              <td class="text-center"><a href="{{route('campo.show',Crypt::encrypt($evento->id))}}" class="btn btn-secondary"><i class="far fa-eye"></i> Ver</a></td>
             </tr>
              @endforeach
             </tbody>

@@ -94,7 +94,7 @@ class CanchasController extends Controller
         $event->save();
         return view('/eventos');*/
         $cancha = new Cancha();
-        $cancha->title = "Reservado";
+        $cancha->title = request('txtHora2');
         $cancha->hora = request('txtHora2');
         $cancha->usuario =request('txtUsuario');
         $cancha->visi1 = request('visi1');
@@ -145,13 +145,15 @@ class CanchasController extends Controller
         return redirect('canchas');
     }
 
-    public function edit($id)
+    public function edit($id,Request $request)
     {
-        $cancha = Cancha::findOrFail($id);
-        $pdf = PDF::loadView('ReservacionCancha', ['canchas'=>$cancha]);
-        //dd($pdf); 
-        return $pdf->download('Reservacion-Cancha.pdf');
-        //return redirect('eventos');
+        $alberca = Cancha::findOrFail($id);
+        list($manzana,$villa)= explode("-",$request->user()->residencia_id,2);
+        $cedula=$request->user()->cedula;
+        $locacion='Cancha de cemento 1';
+        $pdf = PDF::loadView('Reservaciones', ['albercas'=>$alberca,'manzana'=>$manzana,'villa'=>$villa,
+        'cedula'=>$cedula,
+        'locacion'=>$locacion]);  return $pdf->download('Reservacion.pdf');
     }
 
  

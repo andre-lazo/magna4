@@ -37,20 +37,20 @@ class UserController extends Controller
     {
         
         $usuario= new User();
-        $usuario->name=$request->get('name');
+        $usuario->name=strtoupper($request->get('name'));
         $usuario->email=$request->get('email');
         $usuario->password= bcrypt($request->get('password'));
         $usuario->cedula=$request->get('cedula');
         $usuario->residencia_id=$request->get('residencia');
-        $usuario->apellido=$request->get('apellido');
+        $usuario->apellido=strtoupper($request->get('apellido'));
         $usuario->rol=$request->get('rol');
-       /* if($request->hasFile('imagen'))
+        if($request->hasFile('imagen'))
         {
 
             $file=$request->imagen;
             $file->move(public_path() . '/img',$file->getClientOriginalName());
             $usuario->imagen=$file->getClientOriginalName();
-        }*/
+        }
         $rol_numbre=0;
         if($usuario->rol=="cliente_master2"){
             $rol_numbre=8;
@@ -78,7 +78,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $residencia=Residencia::all();
-        return view('users.edit',['user'=> User::findOrFail($id),'residencias'=>$residencia]);
+        return view('users.edit',['user'=> User::findOrFail(Crypt::decrypt($id)),'residencias'=>$residencia]);
     }
 
     
@@ -92,6 +92,22 @@ class UserController extends Controller
         $usuario->cedula=$request->get('cedula');
         $usuario->residencia_id=$request->get('residencia');
         $usuario->apellido=$request->get('apellido');
+        if($request->hasFile('imagen'))
+        {
+            $file=$request->imagen;
+            $file->move(public_path() . '/img',$file->getClientOriginalName());
+            $usuario->imagen=$file->getClientOriginalName();
+        }
+        $pass=$request->get('password');
+  
+        if($pass != NULL){
+            $this->validate(request(),['password'=>['max:255','min:6','confirmed']]);
+          $usuario->password=bcrypt($request->get('password'));
+         
+        }
+        else{
+            unset($usuario->password);
+        }
         $usuario->update();
         return redirect('/user')->with('success','Usuario '.$usuario->name.' Actualizado correctamente');
     }

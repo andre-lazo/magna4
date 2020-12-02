@@ -104,7 +104,7 @@ class CamposController extends Controller
         $event->save();
         return view('/eventos');*/
         $campo = new Campo();
-        $campo->title = "Reservado";
+        $campo->title = request('txtHora2');
         $campo->hora = request('txtHora2');
         $campo->usuario =request('txtUsuario');
         $campo->visi1 = request('visi1');
@@ -155,13 +155,15 @@ class CamposController extends Controller
         return redirect('campos');
     }
 
-    public function edit($id)
+    public function edit($id,Request $request)
     {
-        $campos = Campo::findOrFail($id);
-        $pdf = PDF::loadView('ReservacionCampo', ['campos'=>$campos]);
-        //dd($pdf); 
-        return $pdf->download('Reservacion-Cancha-2.pdf');
-        //return redirect('eventos');
+        $alberca = Campo::findOrFail($id);
+        list($manzana,$villa)= explode("-",$request->user()->residencia_id,2);
+        $cedula=$request->user()->cedula;
+        $locacion='Cancha de cemento 2';
+        $pdf = PDF::loadView('Reservaciones', ['albercas'=>$alberca,'manzana'=>$manzana,'villa'=>$villa,
+        'cedula'=>$cedula,
+        'locacion'=>$locacion]); return $pdf->download('Reservacion.pdf');
     }
 
  

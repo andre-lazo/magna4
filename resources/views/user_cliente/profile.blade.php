@@ -13,9 +13,14 @@
 @section('content')
     <div class=" mx-auto pt-5 pb-5">
 <h1 class="text-center text-white " style="font-family: verdana">DATOS DE USUARIO: {{$user->name}}</h1>
-<div class="row mt-5 mb-5">
+<div class="row mt-5 mb-4">
 <div class="col-xs-12 col-lg-6" >
+  @if(Auth::user()->imagen!=null)
+  <h1 class="text-center text-white font-weight-bold">Imagen del Ultimo Censo</h1>
+  <img class="ml-5 pl-5" src="{{asset('img/'.Auth::user()->imagen)}}" width="70%" height="120%" alt="">
+  @else
     <img class="ml-5 pl-5" src="{{asset('img/datos.png')}}" width="70%" height="120%" alt="">
+    @endif
 </div>
 <div class="col-xs-12 col-lg-6 pt-5 pr-5 ">
     <table class="table table-bordered table-striped table-hover bg-secondary ">

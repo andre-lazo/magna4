@@ -6,6 +6,7 @@ use App\Models\Alicuota;
 use Illuminate\Http\Request;
 use App\Models\Residencia;
 use App\Models\User;
+use Illuminate\Support\Facades\Crypt;
 class AlicuotaController extends Controller
 {
     public function __construct(){
@@ -59,7 +60,7 @@ class AlicuotaController extends Controller
 
     public function show($id)
     {
-        $alicuota=Alicuota::findOrFail($id);
+        $alicuota=Alicuota::findOrFail(Crypt::decrypt($id));
         return view('alicuotas.view',['alicuota'=>$alicuota]);
 
     }
@@ -67,7 +68,7 @@ class AlicuotaController extends Controller
     public function edit( $id)
     { $residencia=Residencia::all();
         $usuario=User::all();
-        $alicuota=Alicuota::findOrFail($id);
+        $alicuota=Alicuota::findOrFail(Crypt::decrypt($id));
         return view('alicuotas.edit',['alicuota'=>$alicuota,'residencias'=>$residencia,'usuarios'=>$usuario]);
     }
 

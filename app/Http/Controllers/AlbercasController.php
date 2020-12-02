@@ -84,7 +84,7 @@ class AlbercasController extends Controller
     {
        
         $alberca = new Alberca();
-        $alberca->title = "Reservado";
+        $alberca->title = request('txtHora2');
         $alberca->hora = request('txtHora2');
         $alberca->usuario =request('txtUsuario');
         $alberca->visi1 = request('visi1');
@@ -139,13 +139,18 @@ class AlbercasController extends Controller
         return redirect('albercas');
     }
 
-    public function edit($id)
+    public function edit($id,Request $request)
     {
+        
         $alberca = Alberca::findOrFail($id);
-        $pdf = PDF::loadView('ReservacionPiscina', ['albercas'=>$alberca]);
+        list($manzana,$villa)= explode("-",$request->user()->residencia_id,2);
+        $cedula=$request->user()->cedula;
+        $locacion='Alberca';
+        $pdf = PDF::loadView('Reservaciones', ['albercas'=>$alberca,'manzana'=>$manzana,'villa'=>$villa,
+        'cedula'=>$cedula,
+        'locacion'=>$locacion]);
         //dd($pdf); 
-        return $pdf->download('Reservacion-Piscina.pdf');
-        //return redirect('eventos');
+        return $pdf->download('Reservacion.pdf');
     }
 
  

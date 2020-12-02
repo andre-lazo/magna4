@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Alberca;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Crypt;
 class Alberca_adminController extends Controller
 {
     /**
@@ -43,7 +43,7 @@ class Alberca_adminController extends Controller
      */
     public function show($id)
     {
-        $evento= Alberca::findOrFail($id);
+        $evento= Alberca::findOrFail(Crypt::decrypt($id));
         return view('reservas.view',['evento'=>$evento]);
     }
 

@@ -66,7 +66,7 @@
                 <td class="text-center">{{$user->name    }}</td>
                 <td class="text-center">{{$user->email   }}</td>
                 <td class="text-center"><a href="{{route('user.show',Crypt::encrypt($user->id))}}" class="btn btn-secondary"><i class="far fa-eye"></i> Ver</a></td>
-                <td class="text-center"> <a href="{{ route('user.edit',$user->id) }}" class="btn btn-primary"><i class="far fa-edit"></i>  Modificar</a></td>
+                <td class="text-center"> <a href="{{ route('user.edit',Crypt::encrypt($user->id)) }}" class="btn btn-primary"><i class="far fa-edit"></i>  Modificar</a></td>
                 <td class="text-center"> 
                        
                 <button type="button" class="float-right btn btn-danger" data-toggle="modal" data-target="#modalEliminar-{{$user->id}}"><i class="far fa-trash-alt"></i> Eliminar</button>

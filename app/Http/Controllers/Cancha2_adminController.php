@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Campo;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Crypt;
 class Cancha2_adminController extends Controller
 {
     /**
@@ -47,7 +47,7 @@ class Cancha2_adminController extends Controller
      */
     public function show($id)
     {
-        $evento= Campo::findOrFail($id);
+        $evento= Campo::findOrFail(Crypt::decrypt($id));
         return view('reservas.view',['evento'=>$evento]);
     }
 

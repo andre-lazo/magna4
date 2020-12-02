@@ -95,7 +95,7 @@ class EventosController extends Controller
         $event->save();
         return view('/eventos');*/
         $evento = new Evento();
-        $evento->title = "Reservado";
+        $evento->title = request('txtHora2');
         $evento->hora = request('txtHora2');
         $evento->usuario =request('txtUsuario');
         $evento->visi1 = request('visi1');
@@ -146,13 +146,15 @@ class EventosController extends Controller
         return redirect('eventos');
     }
 
-    public function edit($id)
+    public function edit($id,Request $request)
     {
-        $evento = Evento::findOrFail($id);
-        $pdf = PDF::loadView('ReservacionSalonEventos', ['eventos'=>$evento]);
-        //dd($pdf); 
-        return $pdf->download('Reservacion-Salon-Eventos.pdf');
-        //return redirect('eventos');
+        $alberca = Evento::findOrFail($id);
+        list($manzana,$villa)= explode("-",$request->user()->residencia_id,2);
+        $cedula=$request->user()->cedula;
+        $locacion='Salon de Eventos';
+        $pdf = PDF::loadView('Reservaciones', ['albercas'=>$alberca,'manzana'=>$manzana,'villa'=>$villa,
+        'cedula'=>$cedula,
+        'locacion'=>$locacion]);  return $pdf->download('Reservacion.pdf');
     }
 
  

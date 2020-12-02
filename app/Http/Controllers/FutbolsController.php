@@ -84,8 +84,8 @@ class FutbolsController extends Controller
     {
        
         $futbol = new Futbol();
-        $futbol->title = "Reservado";
-        $futbol->hora = request('txtHora2');
+        $futbol->title = request('txtHora2');
+        $futbol->hora = 
         $futbol->usuario =request('txtUsuario');
         $futbol->visi1 = request('visi1');
         $futbol->pare1 = request('parent1');
@@ -139,15 +139,16 @@ class FutbolsController extends Controller
         return redirect('albercas');
     }
 
-    public function edit($id)
+    public function edit($id,Request $request)
     {
-        $futbol = Futbol::findOrFail($id);
-        $pdf = PDF::loadView('ReservacionCesped', ['futbols'=>$futbol]);
-        //dd($pdf); 
-        return $pdf->download('Reservacion-Cesped.pdf');
-        //return redirect('eventos');
+        $alberca = Futbol::findOrFail($id);
+        list($manzana,$villa)= explode("-",$request->user()->residencia_id,2);
+        $cedula=$request->user()->cedula;
+        $locacion='Cancha de cesped';
+        $pdf = PDF::loadView('Reservaciones', ['albercas'=>$alberca,'manzana'=>$manzana,'villa'=>$villa,
+        'cedula'=>$cedula,
+        'locacion'=>$locacion]); return $pdf->download('Reservacion.pdf');
     }
-
  
     public function update(Request $request, $id)
     {

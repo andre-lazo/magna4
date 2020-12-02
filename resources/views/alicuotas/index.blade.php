@@ -35,8 +35,8 @@
           <td>{{$alicuota->cuotas_pagadas}}</td>
           <td>{{$alicuota->cuotas_adeudadas}}</td>
           <td>{{$alicuota->updated_at}}</td>
-          <td class="text-center"><a class="btn btn-secondary" href="{{route('alicuota.show',$alicuota->id)}}"><i class="far fa-eye"></i> Ver</a></td>
-          <td ><a class="btn btn-danger"   href="{{route('alicuota.edit',$alicuota->id)}}"><i class="far fa-edit"></i> MODIFICAR</a></td>
+          <td class="text-center"><a class="btn btn-secondary" href="{{route('alicuota.show',Crypt::encrypt($alicuota->id))}}"><i class="far fa-eye"></i> Ver</a></td>
+          <td ><a class="btn btn-danger"   href="{{route('alicuota.edit',Crypt::encrypt($alicuota->id))}}"><i class="far fa-edit"></i> MODIFICAR</a></td>
         </tr>
        
          @endforeach

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Cancha;
-
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Http\Request;
 
 class Cancha1_adminController extends Controller
@@ -48,7 +48,7 @@ class Cancha1_adminController extends Controller
      */
     public function show($id)
     {
-        $evento= Cancha::findOrFail($id);
+        $evento= Cancha::findOrFail(Crypt::decrypt($id));
         return view('reservas.view',['evento'=>$evento]);
     }
 

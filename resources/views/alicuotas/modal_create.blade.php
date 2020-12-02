@@ -1,5 +1,23 @@
-<script>
- 
+
+  <script>
+    function restar1() {
+      var total = 0;
+      var valor=$("#cuotas_totales").val();
+      valor = (valor == null || valor == undefined || valor == "") ? 0 : valor;
+      total =valor- $("#cuotas_pagadas").val();
+      total = (total == null || total == undefined || total == "") ? 0 : total;
+      $("#total").val(total);
+  
+      
+    }
+    function restar2() {
+      var total = 0;
+      var valor=$("#valor_total").val();
+      valor = (valor == null || valor == undefined || valor == "") ? 0 : valor;
+      total =valor- $("#valor_pagado").val();
+      total = (total == null || total == undefined || total == "") ? 0 : total;
+      $("#total2").val(total);
+    }
 
   function solonum(e){
             key=e.keyCode || e.which;
@@ -70,17 +88,17 @@
         <label for="message-text" class="col-form-label">Fecha fin:</label>
         <input type="date"  name="fecha_fin" class="form-control" id="recipient-name">
         <label for="message-text" class="col-form-label">Cuotas totales:</label>
-        <input type="text" name="cuotas_totales" onkeypress=" return solonum(event)" class="form-control" id="recipient-name">
+        <input type="text" name="cuotas_totales"  onkeyup="restar1();" onkeypress=" return solonum(event)" class="form-control" id="cuotas_totales">
         <label for="message-text" class="col-form-label">Valor total:</label>
-        <input type="text" name="valor_total" onkeypress=" return solonum(event)" class="form-control" id="recipient-name">
+        <input type="text" name="valor_total" onkeypress=" return solonum(event)"  onkeyup="restar2();" class="form-control" id="valor_total">
         <label for="message-text" class="col-form-label">Cuotas pagadas:</label>
-        <input type="text" name="cuotas_pagadas" onkeypress=" return solonum(event)" class="form-control" id="recipient-name">
+        <input type="text" name="cuotas_pagadas"  onkeyup="restar1();" onkeypress=" return solonum(event)" class="form-control" id="cuotas_pagadas">
         <label for="message-text" class="col-form-label">Valor pagado:</label>
-        <input type="text" name="valor_pagado" onkeypress=" return solonum(event)" class="form-control" id="recipient-name">
-        <label for="message-text" class="col-form-label">Cuotas adeudadas:</label>
-        <input type="text" name="cuotas_adeudadas" onkeypress=" return solonum(event)" class="form-control" id="recipient-name">
+        <input type="text" name="valor_pagado" onkeypress=" return solonum(event)"  onkeyup="restar2();" class="form-control" id="valor_pagado">
+        <label  for="message-text" class="col-form-label">Cuotas adeudadas:</label>
+        <input id="total" type="text" name="cuotas_adeudadas" onkeypress=" return solonum(event)" class="form-control">
         <label for="message-text" class="col-form-label">Valor Adeudado:</label>
-        <input type="text" name="valor_adeudado" onkeypress=" return solonum(event)" class="form-control" id="recipient-name">
+        <input id="total2" type="text" name="valor_adeudado" onkeypress=" return solonum(event)" class="form-control" >
       </div>
     
    

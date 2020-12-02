@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Futbol;
-
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Http\Request;
 
 class Campos_adminController extends Controller
@@ -47,7 +47,7 @@ class Campos_adminController extends Controller
      */
     public function show($id)
     {
-        $evento= Futbol::findOrFail($id);
+        $evento= Futbol::findOrFail(Crypt::decrypt($id));
         return view('reservas.view',['evento'=>$evento]);
     }
 

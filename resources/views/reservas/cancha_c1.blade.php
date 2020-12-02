@@ -35,7 +35,7 @@
               <td class="text-center">{{$evento->usuario}}</td>
               <td class="text-center">{{$evento->start}}</td>
               <td class="text-center">{{$evento->hora}}</td>
-              <td class="text-center"><a href="{{route('alberca.show',$evento->id)}}" class="btn btn-secondary"><i class="far fa-eye"></i> Ver</a></td>
+              <td class="text-center"><a href="{{route('cancha1.show',Crypt::encrypt($evento->id))}}" class="btn btn-secondary"><i class="far fa-eye"></i> Ver</a></td>
             </tr>
              @endforeach
             </tbody>
