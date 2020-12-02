@@ -1,35 +1,24 @@
 @extends('navbar')
-
+<style>
+    .my-custom-scrollbar {
+        position: relative;
+        height: 40%;
+        overflow: auto;
+        }
+        .table-wrapper-scroll-y {
+        display: block;
+        }
+        
+          
+</style>
 @section('content')
 <section class="mt-5 pt-5">
-    <h1 class="text-center">
-        ADMINISTRACION DE RESERVACIONES
+    <h1 class="text-center pt-5">
+       RESERVACIONES DE SALON DE EVENTOS
     </h1>
-    <div class="container mb-5 mt-5 ">
-       
-        <form class="form-inline ml-3 " >
-            <label class="mr-3">BUCAR POR:</label>
-            <div class="input-group input-group-sm bg-secondary">
-               
-                    <select class="form-control form-control-navbar" name="search" type="searcharia-label="Search" width="50%" style="font-weight: bold;" name="" class="form-control mb-5"  id="">
-                        <optio  n value="" style="font-weight: bold;">Piscinas</option>
-                        <option value="" style="font-weight: bold;">Salon de Eventos</option>
-                        <option value="" style="font-weight: bold;">Cancha 1(cesped)</option>
-                        <option value="" style="font-weight: bold;">Cancha 2(multiuso)</option>
-                        <option value="" style="font-weight: bold;">Cancha 3(multiuso 2)</option>
-            
-                    </select>
-                <div class="input-group-append">
-                    <button class="btn btn-navbar" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-   
-    <div class="container">
-        <table class="table table-hover table-bordered">
+    
+    <div class="container table-wrapper-scroll-y my-custom-scrollbar mb-5 " id="prueba">
+        <table class="table table-bordered table-striped mb-0 table-hover">
             <thead class="thead-dark">
               <tr>
                 <th scope="col" class="text-center">#</th>
@@ -46,7 +35,7 @@
               <td class="text-center">{{$evento->usuario}}</td>
               <td class="text-center">{{$evento->start}}</td>
               <td class="text-center">{{$evento->hora}}</td>
-              <td class="text-center"><a href="{{route('reserva.show',$evento->id)}}" class="btn btn-secondary"><i class="far fa-eye"></i> Ver</a></td>
+              <td class="text-center"><a href="{{route('alberca.show',$evento->id)}}" class="btn btn-secondary"><i class="far fa-eye"></i> Ver</a></td>
             </tr>
              @endforeach
             </tbody>

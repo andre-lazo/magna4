@@ -1,10 +1,15 @@
 @extends('navbar')
-
+<style>
+  body{
+    margin-top: 1000px;
+  }
+</style>
 @section('content')
     @include('noticias.model_create')
-   
-    <a id="inicio" href="" data-toggle="modal" data-target="#noticia_nueva" class="ml-3 mt-4 btn btn-outline-danger"><i class="fas fa-calendar-plus"></i> Añadir Noticias</a>
-    <h1 class="ml-3 mt-4" >ULTIMAS NOTICIAS</h1>
+  <div>
+     
+    <a id="inicio" href="" data-toggle="modal" data-target="#noticia_nueva" class=" ml-3 mt-5 btn btn-outline-danger"><i class="fas fa-calendar-plus"></i> Añadir Noticias</a>
+    <h1 class="ml-3 mt-4 " >ULTIMAS NOTICIAS</h1>
      
     @foreach ($noticias as $noticia)
     @include('noticias.model_delete')
@@ -38,4 +43,5 @@
 @endif
  
 @endforeach
+  </div>
     @endsection

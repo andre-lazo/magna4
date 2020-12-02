@@ -11,7 +11,7 @@ class EventoController extends Controller
     public function index()
     {
         $evento=Evento::all();
-        return view('reservas.index',['eventos'=>$evento]);
+        return view('reservas.salon',['eventos'=>$evento]);
     }
 
     public function create()

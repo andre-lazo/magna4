@@ -36,10 +36,16 @@ Route::get('/', function (Request $request) {
     Route::resource('noticia', 'App\Http\Controllers\NoticiaController');
     Route::resource('user', 'App\Http\Controllers\UserController');
     Route::resource('alicuota', 'App\Http\Controllers\AlicuotaController');
-    Route::resource('reserva', 'App\Http\Controllers\EventoController');
+    Route::resource('evento', 'App\Http\Controllers\EventoController');
+    Route::resource('alberca', 'App\Http\Controllers\Alberca_adminController');
+    Route::resource('campo', 'App\Http\Controllers\Campos_adminController');
+    Route::resource('cancha1', 'App\Http\Controllers\Cancha1_adminController');
+    Route::resource('cancha2', 'App\Http\Controllers\Cancha2_adminController');
+
+
        });
         
-    Route::group(['middleware' => ['role:cliente2||cliente_master2']], function () {
+    Route::group(['middleware' => ['role:cliente2|cliente_master2']], function () {
         
     Route::get('/index', function () { return view('user_cliente.index');});
     Route::get('/normas', function () {return view('user_cliente.normas');});
