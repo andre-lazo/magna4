@@ -51,7 +51,7 @@
             <th  scope="col" class="text-center">#</th>
             <th  scope="col" class="text-center">Nombre</th>
             <th  scope="col" class="text-center">Email</th>
- 
+            <th  scope="col" class="text-center">Codigo Manzana y Villa</th>
             <th  scope="col" class="text-center">Ver</th>
             <th  scope="col" class="text-center">Modificar</th>
             <th  scope="col" class="text-center">Eliminar</th>
@@ -65,6 +65,8 @@
                 <th scope="row" class="text-center">{{$user->id}}</th>
                 <td class="text-center">{{$user->name    }}</td>
                 <td class="text-center">{{$user->email   }}</td>
+                <td class="text-center">{{$user->residencia_id   }}</td>
+
                 <td class="text-center"><a href="{{route('user.show',Crypt::encrypt($user->id))}}" class="btn btn-secondary"><i class="far fa-eye"></i> Ver</a></td>
                 <td class="text-center"> <a href="{{ route('user.edit',Crypt::encrypt($user->id)) }}" class="btn btn-primary"><i class="far fa-edit"></i>  Modificar</a></td>
                 <td class="text-center"> 

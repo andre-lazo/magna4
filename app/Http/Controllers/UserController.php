@@ -35,7 +35,7 @@ class UserController extends Controller
   
     public function store(UserFormRequest $request)
     {
-        
+        $this->validate(request(),['residencia'=>['required']]);
         $usuario= new User();
         $usuario->name=strtoupper($request->get('name'));
         $usuario->email=$request->get('email');
@@ -86,6 +86,7 @@ class UserController extends Controller
     {
         $this->validate(request(),['email'=>['required','email','max:255','unique:users,email,'.$id]]);
         $this->validate(request(),['cedula'=>['required','max:10','min:10','unique:users,cedula,'.$id]]);
+        $this->validate(request(),['residencia'=>['required']]);
         $usuario=User::findOrFail($id); 
         $usuario->name=$request->get('name');
         $usuario->email=$request->get('email');

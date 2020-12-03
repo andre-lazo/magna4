@@ -18,6 +18,7 @@
             <th scope="col">#Residencia_ID</th>
             <th scope="col">Propietario</th>
             <th scope="col">Cedula</th>
+            <th scope="col">Manzana y Villa</th>
             <th scope="col">Cuotas Pagadas</th>
             <th scope="col">Cuotas Adeudadas</th>
             <th scope="col">Ultima Actualizacion</th>
@@ -32,6 +33,7 @@
           <th scope="row">#{{$alicuota->cod_MnzV}}</th>
           <td>{{$alicuota->nombre.' '.$alicuota->apellido}}</td>
           <td>{{$alicuota->cedula}}</td>
+          <td>{{$alicuota->cod_MnzV}}</td>
           <td>{{$alicuota->cuotas_pagadas}}</td>
           <td>{{$alicuota->cuotas_adeudadas}}</td>
           <td>{{$alicuota->updated_at}}</td>
