@@ -20,6 +20,11 @@
    .flotar{
      margin-left: 620px;
    }
+   @media screen and (max-width:800px){
+    .flotar{
+      margin-left: 0px;
+    }
+   }
  </style>
 </head>
 <body>
@@ -59,7 +64,7 @@
           </div>
         </li>
        
-        <li class="flotar nav-item dropdown  active">
+        <li class="flotar  nav-item dropdown  active">
          <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->email}}</a>
          <div class="dropdown-menu bg-dark"> 
            <a class="dropdown-item " href="{{route('user_cliente.show',Crypt::encrypt(Auth::user()->id))}}"><i class="fas fa-user"> </i> Perfil</a>

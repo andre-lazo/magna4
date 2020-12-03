@@ -22,6 +22,11 @@
    .flotar{
      margin-left: 620px;
    }
+   @media screen and (max-width:800px){
+    .flotar{
+      margin-left: 0px;
+    }
+   }
    .content{
      margin-top: 120px;
    }
