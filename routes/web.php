@@ -21,11 +21,16 @@ Route::get('/', function (Request $request) {
             }
         }
         if ($name_rol=="admin2") {
-            return redirect('/user');
+            return redirect('/user')->with('success','Bienvenido Usuario '.Auth::user()->name);
         } 
         if($name_rol=="cliente2"|| $name_rol=="cliente_master2")
-       
-        return view('user_cliente.index')->with('success','Bienvenido Usuario'.Auth::user()->name);
+       if(Auth::user()->created_at!=Auth::user()->updated_at){
+
+        return redirect('/index')->with('success','Bienvenido Usuario '.Auth::user()->name);
+    }
+        else{
+            return redirect('/configuracion_cliente')->with('warning','PORFAVOR ACTUALICE SU CONTRASEÑA ');
+        }
         }
     });
     Route::get('/logout', function () {
@@ -50,7 +55,9 @@ Route::get('/', function (Request $request) {
         
     Route::group(['middleware' => ['role:cliente2|cliente_master2']], function () {
         
-    Route::get('/index', function () { return view('user_cliente.index');});
+    Route::get('/index', function () {
+         return view('user_cliente.index');
+        });
     Route::get('/normas', function () {return view('user_cliente.normas');});
     Route::resource('noticia_cliente', 'App\Http\Controllers\Noticia_userController');
     Route::resource('alicuota_cliente', 'App\Http\Controllers\Alicuota_userController');

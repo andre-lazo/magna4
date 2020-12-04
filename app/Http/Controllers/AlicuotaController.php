@@ -39,11 +39,16 @@ class AlicuotaController extends Controller
      */
     public function store(Request $request)
     {
+      $datos= Alicuota::all();
+      $bandera=false;
        list($nombre,$apellido,$cedula)= explode("-",$request->get('propietario'),3);
         $alicuota= new Alicuota();
         $alicuota->nombre=$nombre;
         $alicuota->apellido=$apellido;
         $alicuota->cedula=$cedula;
+        foreach($datos as $dato){
+            if($dato->cod_MnzV==$request->get('residencia')){$bandera=true;}
+        }
         $alicuota->cod_MnzV=$request->get('residencia');
         $alicuota->fecha_inicio=$request->get('fecha_inicio');
         $alicuota->fecha_final=$request->get('fecha_fin');
@@ -53,9 +58,12 @@ class AlicuotaController extends Controller
         $alicuota->valor_pagado=$request->get('valor_pagado');
         $alicuota->cuotas_adeudadas=$request->get('cuotas_adeudadas');
         $alicuota->valor_adeudado=$request->get('valor_adeudado');
-        $alicuota->save();
-        return \redirect('alicuota')->with('success','Alicuota de '.$alicuota->nombre.' registrada correctamente');
-
+        if(!$bandera){ $alicuota->save();
+            return \redirect('alicuota')->with('success','Alicuota de '.$alicuota->nombre.' registrada correctamente');
+    }else{
+        return \redirect('alicuota')->with('warning','Alicuota de residencia '.$alicuota->cod_MnzV.' ya esta registrada');
+    }
+       
     }
 
     public function show($id)

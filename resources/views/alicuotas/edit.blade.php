@@ -53,17 +53,17 @@
                 <label for="message-text"  class="col-form-label">Fecha fin:</label>
                 <input type="date" value="{{$alicuota->fecha_final}}"  name="fecha_fin" class="form-control" id="recipient-name">
                 <label for="message-text"  class="col-form-label">Cuotas totales:</label>
-                <input type="text" value="{{$alicuota->cuotas_totales}}" name="cuotas_totales" onkeyup="restar1();" onkeypress=" return solonum(event)"  class="form-control" id="cuotas_totales">
+                <input type="number" step="any" min="{{$alicuota->cuotas_totales}}" value="{{$alicuota->cuotas_totales}}" name="cuotas_totales" onkeyup="restar1();" onkeypress=" return solonum(event)"  class="form-control" id="cuotas_totales">
                 <label for="message-text" class="col-form-label">Valor total:</label>
-                <input type="text" value="{{$alicuota->valor_total}}"  name="valor_total" onkeyup="restar2();" onkeypress=" return solonum(event)" class="form-control" id="valor_total">
+                <input type="number" step="any" min="{{$alicuota->valor_total}}" value="{{$alicuota->valor_total}}"  name="valor_total" onkeyup="restar2();" onkeypress=" return solonum(event)" class="form-control" id="valor_total">
                 <label for="message-text" class="col-form-label">Cuotas pagadas:</label>
-                <input type="text" value="{{$alicuota->cuotas_pagadas}}" name="cuotas_pagadas" onkeyup="restar1();" onkeypress=" return solonum(event)" class="form-control" id="cuotas_pagadas">
+                <input type="number" step="any" min="{{$alicuota->cuotas_pagadas}}" value="{{$alicuota->cuotas_pagadas}}" name="cuotas_pagadas" onkeyup="restar1();" onkeypress=" return solonum(event)" class="form-control" id="cuotas_pagadas">
                 <label for="message-text" class="col-form-label">Valor pagado:</label>
-                <input type="text" value="{{$alicuota->valor_pagado}}" name="valor_pagado"  onkeyup="restar2();" onkeypress=" return solonum(event)" class="form-control" id="valor_pagado">
+                <input type="number" step="any" min="{{$alicuota->valor_pagado}}" value="{{$alicuota->valor_pagado}}" name="valor_pagado"  onkeyup="restar2();" onkeypress=" return solonum(event)" class="form-control" id="valor_pagado">
                 <label for="message-text" class="col-form-label">Cuotas adeudadas: </label>
-                <input type="text" value="{{$alicuota->cuotas_adeudadas}}" name="cuotas_adeudadas" readonly="readonly" id="total"onkeypress=" return solonum(event)"  class="form-control" >
+                <input type="number" step="any"" value="{{$alicuota->cuotas_adeudadas}}" name="cuotas_adeudadas" readonly="readonly" id="total"onkeypress=" return solonum(event)"  class="form-control" >
                 <label for="message-text" class="col-form-label">Valor Adeudado:</label>
-                <input id="total2" type="text" value="{{$alicuota->valor_adeudado}}" name="valor_adeudado" readonly="readonly" onkeypress=" return solonum(event)"class="form-control"  >
+                <input id="total2" type="number" step="any" " value="{{$alicuota->valor_adeudado}}" name="valor_adeudado" readonly="readonly" onkeypress=" return solonum(event)"class="form-control"  >
               </div>
              
               <button type="submit" class="btn btn-primary"><i class="fas fa-save"> Guardar</i></button>

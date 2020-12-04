@@ -26,7 +26,7 @@
          
           <div class="form-group">
            <center> <label fors="email"><i class="far fa-envelope"></i> Email </label></center>
-            <input type="email" class="form-control" value="{{$user->email}}" name="email" placeholder="ingrese su email">
+            <input readonly type="email" class="form-control" value="{{$user->email}}" name="email" placeholder="ingrese su email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
           </div>
           <div class="form-group">

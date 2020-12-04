@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }else{
                
                 swal({
-                    icon: 'error',
+                    icon: 'error', 
                     title: 'Por favor seleccionar una fecha actual o mayor.'
                     
                   })

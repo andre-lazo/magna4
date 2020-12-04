@@ -10,13 +10,18 @@ class Alicuota_userController extends Controller
     
     public function index(Request $request)
     {
-       
-        $alicuotas=Alicuota::where('cedula','=',$request->user()->cedula)->first();
+       $datos=Alicuota::all();
+        $alicuotas=array();
+        foreach ($datos as $dato) {
+            if($dato->cedula==$request->user()->cedula){
+                array_push($alicuotas,$dato);
+            }
+        }
         if($alicuotas==null){
             return redirect('index')->with('success','Sin registro de alicuotas');
         }
        else{
-        return view('user_cliente.alicuota',['alicuota'=>$alicuotas]);
+        return view('user_cliente.alicuota',['alicuotas'=>$alicuotas]);
        }
        return null;
     }

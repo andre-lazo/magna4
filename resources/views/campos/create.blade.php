@@ -1,12 +1,14 @@
 @extends('navbar_user')
 <style>
-    body{
-        background: url({{asset('img/cancha.jpg')}}) no-repeat center center  fixed;
-        font-family: 'Titillium Web', sans-serif;
-        background-size: cover; 
-       
+  .mover{
+    padding-left: 25%;
+  }
+  @media screen and (max-width:800px){
+    .mover{
+      padding-left: 0%;
     }
-</style>
+  }
+   </style>
 <script>
     function cargar(){
        var hora;

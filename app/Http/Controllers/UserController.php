@@ -83,16 +83,18 @@ class UserController extends Controller
 
     
     public function update(UserFormEdit $request, $id)
-    {
+    { 
+        $carbon_date = \Carbon\Carbon::now();
         $this->validate(request(),['email'=>['required','email','max:255','unique:users,email,'.$id]]);
         $this->validate(request(),['cedula'=>['required','max:10','min:10','unique:users,cedula,'.$id]]);
         $this->validate(request(),['residencia'=>['required']]);
         $usuario=User::findOrFail($id); 
-        $usuario->name=$request->get('name');
+        $usuario->name=strtoupper($request->get('name'));
         $usuario->email=$request->get('email');
         $usuario->cedula=$request->get('cedula');
         $usuario->residencia_id=$request->get('residencia');
-        $usuario->apellido=$request->get('apellido');
+        $usuario->apellido=strtoupper($request->get('apellido'));
+       
         if($request->hasFile('imagen'))
         {
             $file=$request->imagen;
@@ -104,6 +106,8 @@ class UserController extends Controller
         if($pass != NULL){
             $this->validate(request(),['password'=>['max:255','min:6','confirmed']]);
           $usuario->password=bcrypt($request->get('password'));
+          $usuario->created_at=$carbon_date;
+          $usuario->updated_at=$carbon_date;
          
         }
         else{
