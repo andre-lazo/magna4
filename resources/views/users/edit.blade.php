@@ -34,7 +34,7 @@
            </div>
            <div class="form-group">
             <center> <label ><i class="fas fa-house-user"></i> Codigo de Residencia </label></center>
-             <select name="residencia"  class="form-control">
+             <select required name="residencia"  class="form-control">
               <option value="{{$user->residencia_id}}">{{$user->residencia_id}}</option>
                @foreach ($residencias as $residencia)
                <option value="{{$residencia->residencia_id}}">{{$residencia->residencia_id}}</option>

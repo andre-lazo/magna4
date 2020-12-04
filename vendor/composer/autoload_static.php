@@ -145,6 +145,7 @@ class ComposerStaticInitac7bc472ab7f59976d3c9616285a5044
         ),
         'J' => 
         array (
+            'Jenssegers\\Model\\' => 17,
             'Jenssegers\\Agent\\' => 17,
             'Jaybizzle\\CrawlerDetect\\' => 24,
         ),
@@ -160,6 +161,7 @@ class ComposerStaticInitac7bc472ab7f59976d3c9616285a5044
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
             'GrahamCampbell\\ResultType\\' => 26,
+            'GeneaLabs\\LaravelCaffeine\\' => 26,
         ),
         'F' => 
         array (
@@ -457,6 +459,10 @@ class ComposerStaticInitac7bc472ab7f59976d3c9616285a5044
         array (
             0 => __DIR__ . '/..' . '/laravel/fortify/src',
         ),
+        'Jenssegers\\Model\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jenssegers/model/src',
+        ),
         'Jenssegers\\Agent\\' => 
         array (
             0 => __DIR__ . '/..' . '/jenssegers/agent/src',
@@ -493,6 +499,10 @@ class ComposerStaticInitac7bc472ab7f59976d3c9616285a5044
         'GrahamCampbell\\ResultType\\' => 
         array (
             0 => __DIR__ . '/..' . '/graham-campbell/result-type/src',
+        ),
+        'GeneaLabs\\LaravelCaffeine\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/genealabs/laravel-caffeine/src',
         ),
         'Fruitcake\\Cors\\' => 
         array (
@@ -633,17 +643,22 @@ class ComposerStaticInitac7bc472ab7f59976d3c9616285a5044
         'App\\Actions\\Jetstream\\UpdateTeamName' => __DIR__ . '/../..' . '/app/Actions/Jetstream/UpdateTeamName.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Alberca_adminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Alberca_adminController.php',
         'App\\Http\\Controllers\\AlbercasController' => __DIR__ . '/../..' . '/app/Http/Controllers/AlbercasController.php',
         'App\\Http\\Controllers\\AlicuotaController' => __DIR__ . '/../..' . '/app/Http/Controllers/AlicuotaController.php',
         'App\\Http\\Controllers\\Alicuota_userController' => __DIR__ . '/../..' . '/app/Http/Controllers/Alicuota_userController.php',
         'App\\Http\\Controllers\\CamposController' => __DIR__ . '/../..' . '/app/Http/Controllers/CamposController.php',
+        'App\\Http\\Controllers\\Campos_adminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Campos_adminController.php',
+        'App\\Http\\Controllers\\Cancha1_adminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Cancha1_adminController.php',
+        'App\\Http\\Controllers\\Cancha2_adminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Cancha2_adminController.php',
         'App\\Http\\Controllers\\CanchasController' => __DIR__ . '/../..' . '/app/Http/Controllers/CanchasController.php',
+        'App\\Http\\Controllers\\ConfiguracionController' => __DIR__ . '/../..' . '/app/Http/Controllers/ConfiguracionController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\EventoController' => __DIR__ . '/../..' . '/app/Http/Controllers/EventoController.php',
         'App\\Http\\Controllers\\EventosController' => __DIR__ . '/../..' . '/app/Http/Controllers/EventosController.php',
+        'App\\Http\\Controllers\\FutbolsController' => __DIR__ . '/../..' . '/app/Http/Controllers/FutbolsController.php',
         'App\\Http\\Controllers\\NoticiaController' => __DIR__ . '/../..' . '/app/Http/Controllers/NoticiaController.php',
         'App\\Http\\Controllers\\Noticia_userController' => __DIR__ . '/../..' . '/app/Http/Controllers/Noticia_userController.php',
-        'App\\Http\\Controllers\\PicinasController' => __DIR__ . '/../..' . '/app/Http/Controllers/PicinasController.php',
         'App\\Http\\Controllers\\ResidenciaController' => __DIR__ . '/../..' . '/app/Http/Controllers/ResidenciaController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Controllers\\User_clienteController' => __DIR__ . '/../..' . '/app/Http/Controllers/User_clienteController.php',
@@ -663,7 +678,9 @@ class ComposerStaticInitac7bc472ab7f59976d3c9616285a5044
         'App\\Models\\Alicuota' => __DIR__ . '/../..' . '/app/Models/Alicuota.php',
         'App\\Models\\Campo' => __DIR__ . '/../..' . '/app/Models/Campo.php',
         'App\\Models\\Cancha' => __DIR__ . '/../..' . '/app/Models/Cancha.php',
+        'App\\Models\\Configuracion' => __DIR__ . '/../..' . '/app/Models/Configuracion.php',
         'App\\Models\\Evento' => __DIR__ . '/../..' . '/app/Models/Evento.php',
+        'App\\Models\\Futbol' => __DIR__ . '/../..' . '/app/Models/Futbol.php',
         'App\\Models\\Membership' => __DIR__ . '/../..' . '/app/Models/Membership.php',
         'App\\Models\\Noticia' => __DIR__ . '/../..' . '/app/Models/Noticia.php',
         'App\\Models\\Picina' => __DIR__ . '/../..' . '/app/Models/Picina.php',
@@ -1739,6 +1756,11 @@ class ComposerStaticInitac7bc472ab7f59976d3c9616285a5044
         'FontLib\\WOFF\\TableDirectoryEntry' => __DIR__ . '/..' . '/phenx/php-font-lib/src/FontLib/WOFF/TableDirectoryEntry.php',
         'Fruitcake\\Cors\\CorsServiceProvider' => __DIR__ . '/..' . '/fruitcake/laravel-cors/src/CorsServiceProvider.php',
         'Fruitcake\\Cors\\HandleCors' => __DIR__ . '/..' . '/fruitcake/laravel-cors/src/HandleCors.php',
+        'GeneaLabs\\LaravelCaffeine\\Console\\Commands\\Publish' => __DIR__ . '/..' . '/genealabs/laravel-caffeine/src/Console/Commands/Publish.php',
+        'GeneaLabs\\LaravelCaffeine\\Dripper' => __DIR__ . '/..' . '/genealabs/laravel-caffeine/src/Dripper.php',
+        'GeneaLabs\\LaravelCaffeine\\Http\\Controllers\\Drip' => __DIR__ . '/..' . '/genealabs/laravel-caffeine/src/Http/Controllers/Drip.php',
+        'GeneaLabs\\LaravelCaffeine\\Http\\Middleware\\LaravelCaffeineDripMiddleware' => __DIR__ . '/..' . '/genealabs/laravel-caffeine/src/Http/Middleware/LaravelCaffeineDripMiddleware.php',
+        'GeneaLabs\\LaravelCaffeine\\Providers\\Service' => __DIR__ . '/..' . '/genealabs/laravel-caffeine/src/Providers/Service.php',
         'GrahamCampbell\\ResultType\\Error' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Error.php',
         'GrahamCampbell\\ResultType\\Result' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Result.php',
         'GrahamCampbell\\ResultType\\Success' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Success.php',
@@ -2842,6 +2864,8 @@ class ComposerStaticInitac7bc472ab7f59976d3c9616285a5044
         'Jenssegers\\Agent\\Agent' => __DIR__ . '/..' . '/jenssegers/agent/src/Agent.php',
         'Jenssegers\\Agent\\AgentServiceProvider' => __DIR__ . '/..' . '/jenssegers/agent/src/AgentServiceProvider.php',
         'Jenssegers\\Agent\\Facades\\Agent' => __DIR__ . '/..' . '/jenssegers/agent/src/Facades/Agent.php',
+        'Jenssegers\\Model\\MassAssignmentException' => __DIR__ . '/..' . '/jenssegers/model/src/MassAssignmentException.php',
+        'Jenssegers\\Model\\Model' => __DIR__ . '/..' . '/jenssegers/model/src/Model.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'Laravel\\Fortify\\Actions\\AttemptToAuthenticate' => __DIR__ . '/..' . '/laravel/fortify/src/Actions/AttemptToAuthenticate.php',
         'Laravel\\Fortify\\Actions\\CompletePasswordReset' => __DIR__ . '/..' . '/laravel/fortify/src/Actions/CompletePasswordReset.php',

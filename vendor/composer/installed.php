@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'fdf0e895072be443fa25069212bd2165762523a9',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -195,6 +195,15 @@
       array (
       ),
       'reference' => '01de0fe5f71c70d1930ee9a80385f9cc28e0f63a',
+    ),
+    'genealabs/laravel-caffeine' => 
+    array (
+      'pretty_version' => '8.0.0',
+      'version' => '8.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '7f878138eefdc463db4f47af83b2fcdec2b78136',
     ),
     'graham-campbell/result-type' => 
     array (
@@ -476,6 +485,15 @@
       ),
       'reference' => 'daa11c43729510b3700bc34d414664966b03bffe',
     ),
+    'jenssegers/model' => 
+    array (
+      'pretty_version' => 'v1.4.0',
+      'version' => '1.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '546aa41336495ca3e4afd3cd155d454d1c831384',
+    ),
     'kodova/hamcrest-php' => 
     array (
       'replaced' => 
@@ -512,12 +530,12 @@
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'fdf0e895072be443fa25069212bd2165762523a9',
     ),
     'laravel/sanctum' => 
     array (

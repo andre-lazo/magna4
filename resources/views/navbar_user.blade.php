@@ -26,6 +26,7 @@
     }
    }
  </style>
+ 
 </head>
 <body>
   <div class="container-fluid ">
@@ -97,5 +98,6 @@
         Celular Garita Magna: +593 99 989 6250.  
       </footer></center>
       @include('sweet::alert')
+     
 </body> 
 </html>

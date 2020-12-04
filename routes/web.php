@@ -34,8 +34,10 @@ Route::get('/', function (Request $request) {
         }
     });
     Route::get('/logout', function () {
-        return view('auth.login');
+        return redirect('/');
     });
+
+   
 
 
  
