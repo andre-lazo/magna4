@@ -24,7 +24,7 @@
                 
                <p>{{$noticia->contenido_previo}}</p>
             </div>
-            <center><button type="button" class=" btn btn-outline-danger" data-toggle="modal" data-target="#modal-{{$noticia->id}}"><i class="far fa-trash-alt"></i>Ver mas</button></center>
+            <center><button type="button" class=" btn btn-outline-danger" data-toggle="modal" data-target="#modal-{{$noticia->id}}"><i class="far fa-eye"></i> Ver mas</button></center>
         </div>
     </div>
     

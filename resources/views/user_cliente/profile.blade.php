@@ -53,10 +53,6 @@
             <td class="text-center">{{$user->email}}</td>
           </tr>
           <tr>
-            <td class="text-center">Creacion de cuenta</td>
-            <td class="text-center">{{$user->created_at}}</td>
-          </tr>
-          <tr>
             <td class="text-center">Actualizacion de datos</td>
             <td class="text-center">{{$user->updated_at}}</td>
           </tr>

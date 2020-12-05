@@ -23,7 +23,7 @@
           
           <div class="col-xs-12 col-lg-4">
             <p class="h3 mt-3"> CANCHAS</p>
-            <img src="img/cancha.jpg" width="344px" height="255px" style="border-radius: 10%;" >
+            <img src="img/cancha.jpg" width="100%" height="255px" style="border-radius: 10%;" >
             <p class="h4 mt-3">Horarios de uso:</p>
             <p class="h5" >   Miércoles y Domingo: 09:00 - 18:00</p>
             <p class="h5">    Jueves a Sábado: 14:00 - 20:00 </p>

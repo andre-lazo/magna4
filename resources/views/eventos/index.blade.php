@@ -33,12 +33,13 @@
 
 
 
+
 <div clas="row">
-    <div class="col"></div>
-    <div class="col-8">
-        <div id="calendar"></div>
-    </div>
-    <div class="col"></div>
+   
+  <div class="cal">
+      <div id="calendar"></div>
+  </div>
+  <div class="col"></div>
 </div>
 <div class="table-wrapper-scroll-y my-custom-scrollbar row container mt-5">
 <table class="table table-bordered table-striped mb-0 table-hover">

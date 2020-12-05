@@ -28,7 +28,8 @@
               </center>
               <br><label for="message-text" class="col-form-label">IMAGEN:</label>
               <input required  type="file" class="form-control" name="imagen" id="recipient-name">
-             
+              <span class="text-danger"> Formatos admitidos: jpeg,jpg,png</span>
+
             </div>
           
         </div>

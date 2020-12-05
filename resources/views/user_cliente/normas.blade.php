@@ -2,7 +2,107 @@
 
 
 @section('content')
+<style>
+  .centrado{
 
+    margin-top: 32px;
+  }
+  .centrado2{
+
+    margin-top: 14px;
+    margin-left: 60px;
+  }
+  .centrado3{
+
+    margin-top: 25px;
+    margin-right: 15px;
+  }
+  .centrado4{
+
+    margin-top: 10px;
+   
+  }
+  .centrado5{
+
+    margin-top: 0px;
+   
+  }
+  .centrado6{
+  
+    margin-top: 20px;
+   
+  }
+  .centrado7{
+    margin-top: 40px;
+  
+   
+  }
+  
+  .centrado8{
+    margin-top: 10px;
+  
+    margin-left: 50px;
+  }
+  #centrado9{
+
+    margin-top: 10px;
+  }
+  #centrado10{
+
+    margin-top: 15px;
+    margin-left: 30px;
+  }
+  #centrado11{
+
+    margin-top: 35px;
+  }
+  #centrado12{
+
+    margin-top: 40px;
+   
+  }
+  #centrado13{
+
+    margin-top: 52px;
+  }
+  #centrado14{
+
+    margin-top: 35px;
+  }
+  #centrado15{
+
+    margin-top: 40px;
+  }
+  #centrado16{
+
+    margin-top: 70px;
+  }
+  #centrado17{
+
+    margin-top: 40px;
+  }
+  .centrado18{
+
+    margin-top: 32px;
+  }
+  .centrado19{
+
+    margin-top: 120px;
+  }
+  .centrado20{
+
+    margin-top: 130px;
+  }
+
+  .centrado21{
+
+    margin-top: 100px;
+  }
+  .centrado22{
+
+    margin-top: 70px;
+  }
+</style>
   <ul class="pt-5">
     <section class="container mt-2" id="menu">
         <p class="h3" >DIRIJASE A:</p> 
@@ -30,7 +130,7 @@
    
          <div class="row">
     <div class="col-xs-6 col-lg-6">
-      <center>  <img src="img/CAPÍTULO I.jpg" width="60%" height="70%" alt="" class="centrado9"></center> 
+      <center>  <img src="img/CAPÍTULO I.jpg" width="60%" height="70%" alt="" id="centrado9"></center> 
     </div>
     
     <div class="col-xs-6 col-lg-6">
@@ -57,12 +157,12 @@
 
     </div>
     <div class="col-xs-6 col-lg-6">
-      <center>  <img src="img/CAPÍTULO II.jpg" width="60%" height="70%" alt="" class="centrado10"></center> 
+      <center>  <img src="img/CAPÍTULO II.jpg" width="60%" height="70%" alt="" id="centrado10"></center> 
           </div>
    </div>
    <div class="row">
     <div class="col-xs-6 col-lg-6">
-      <center>  <img src="img/CAPÍTULO III.jpg" width="60%" height="70%" class="centrado11" alt=""></center> 
+      <center>  <img src="img/CAPÍTULO III.jpg" width="60%" height="70%" id="centrado11" alt=""></center> 
     </div>
     <div class="col-xs-6 col-lg-6">
       <hr size='5' width="600px">
@@ -92,12 +192,12 @@
         No está permitido a menores de edad </p>
     </div>
     <div class="col-xs-6 col-lg-6">
-      <center>  <img src="img/CAPÍTULO IV.jpg" width="75%" height="85%" class="centrado12" alt=""></center> 
+      <center>  <img src="img/CAPÍTULO IV.jpg" width="75%" height="85%" id="centrado12" alt=""></center> 
           </div>
    </div>
    <div class="row">
     <div class="col-xs-6 col-lg-6">
-   <center>  <img src="img/CAPÍTULO V.jpg" width="85%" height="100%" class="centrado13" alt=""></center> 
+   <center>  <img src="img/CAPÍTULO V.jpg" width="85%" height="100%" id="centrado13" alt=""></center> 
     </div>
     <div class="col-xs-6 col-lg-6">
       <hr size='5' width="600px">
@@ -260,12 +360,12 @@
           
     </div>
     <div class="col-xs-6 col-lg-6">
-      <center>  <img src="img/CAPÍTULO VI.jpg" width="75%" height="85%" class="centrado14" alt=""></center> 
+      <center>  <img src="img/CAPÍTULO VI.jpg" width="75%" height="85%" id="centrado14" alt=""></center> 
     </div>
     </div>
     <div class="row">
       <div class="col-xs-6 col-lg-6">
-        <center>  <img src="img/guardias.jpg" width="75%" height="85%" class="centrado15" alt=""></center> 
+        <center>  <img src="img/guardias.jpg" width="75%" height="85%" id="centrado15" alt=""></center> 
       </div>
       <div class="col-xs-6 col-lg-6">
         <hr size='5' width="600px">
@@ -451,12 +551,12 @@
                 
         </div>
         <div class="col-xs-6 col-lg-6">
-          <center>  <img src="img/CAPÍTULO IX.jpg" width="90%" height="90%" class="centrado16" alt=""></center> 
+          <center>  <img src="img/CAPÍTULO IX.jpg" width="90%" height="90%" id="centrado16" alt=""></center> 
         </div>
         </div>
         <div class="row">
           <div class="col-xs-6 col-lg-6">
-            <center>  <img src="img/CAPÍTULO X.jpg" width="75%" height="85%" class="centrado17" alt=""></center> 
+            <center>  <img src="img/CAPÍTULO X.jpg" width="75%" height="85%" id="centrado17" alt=""></center> 
           </div>
           <div class="col-xs-6 col-lg-6">
             <hr size='5' width="600px">

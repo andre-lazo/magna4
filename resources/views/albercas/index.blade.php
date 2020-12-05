@@ -37,8 +37,8 @@
 
 
 <div clas="row">
-    <div class="col"></div>
-    <div class="col-8">
+   
+    <div class="cal">
         <div id="calendar"></div>
     </div>
     <div class="col"></div>
