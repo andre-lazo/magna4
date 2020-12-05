@@ -46,7 +46,7 @@
          
       <div class="text-center font-weight-bold">
           <label>Hora</label>
-          <input readonly type="text" class="form-control" name="txtHora2" id="txtHora2" required>
+          <input readonly type="text" class="form-control" name="hora" id="txtHora2" required>
           <label>Cedula</label>
           <input readonly type="text" class="form-control" name="cedula" id="cedula" value="{{Auth::user()->cedula}}" required>
           <label>Usuario</label>

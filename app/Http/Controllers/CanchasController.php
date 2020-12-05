@@ -105,9 +105,11 @@ class CanchasController extends Controller
         $event->usuario = $request->input('txtUsuario');
         $event->save();
         return view('/eventos');*/
+        $this->validate(request(),['hora'=>['required']]);
+
         $cancha = new Cancha();
-        $cancha->title = request('txtHora2');
-        $cancha->hora = request('txtHora2');
+        $cancha->title =request('hora');
+        $cancha->hora = request('hora');
         $cancha->usuario =request('txtUsuario');
         $cancha->visi1 = request('visi1');
         $cancha->pare1 = request('parent1');

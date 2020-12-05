@@ -94,10 +94,11 @@ class FutbolsController extends Controller
   
     public function store()
     {
-       
+        $this->validate(request(),['hora'=>['required']]);
+
         $futbol = new Futbol();
-        $futbol->title = request('txtHora2');
-        $futbol->hora = request('txtHora2');
+        $futbol->title =request('hora');
+        $futbol->hora = request('hora');
         $futbol->usuario =request('txtUsuario');
         $futbol->visi1 = request('visi1');
         $futbol->pare1 = request('parent1');

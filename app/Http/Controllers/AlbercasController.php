@@ -94,10 +94,11 @@ class AlbercasController extends Controller
   
     public function store()
     {
-       
+        $this->validate(request(),['hora'=>['required']]);
+
         $alberca = new Alberca();
-        $alberca->title = request('txtHora2');
-        $alberca->hora = request('txtHora2');
+        $alberca->title =request('hora');
+        $alberca->hora = request('hora');
         $alberca->usuario =request('txtUsuario');
         $alberca->visi1 = request('visi1');
         $alberca->pare1 = request('parent1');

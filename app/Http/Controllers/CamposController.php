@@ -115,9 +115,11 @@ class CamposController extends Controller
         $event->usuario = $request->input('txtUsuario');
         $event->save();
         return view('/eventos');*/
+        $this->validate(request(),['hora'=>['required']]);
+
         $campo = new Campo();
-        $campo->title = request('txtHora2');
-        $campo->hora = request('txtHora2');
+        $campo->title =request('hora');
+        $campo->hora = request('hora');
         $campo->usuario =request('txtUsuario');
         $campo->visi1 = request('visi1');
         $campo->pare1 = request('parent1');

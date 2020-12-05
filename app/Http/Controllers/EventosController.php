@@ -81,9 +81,11 @@ class EventosController extends Controller
         $event->usuario = $request->input('txtUsuario');
         $event->save();
         return view('/eventos');*/
+        $this->validate(request(),['hora'=>['required']]);
+
         $evento = new Evento();
-        $evento->title = request('txtHora2');
-        $evento->hora = request('txtHora2');
+        $evento->title =request('hora');
+        $evento->hora = request('hora');
         $evento->usuario =request('txtUsuario');
         $evento->visi1 = request('visi1');
         $evento->pare1 = request('parent1');
