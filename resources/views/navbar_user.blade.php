@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ADMIN MG</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>MAGNA</title>
     <link rel="shortcut icon" href="{{asset('img/magna.jpeg')}}" type="image/jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
@@ -100,6 +102,12 @@
         Celular Garita Magna: +593 99 989 6250.  
       </footer></center>
       @include('sweet::alert')
-     
+     <script>
+      $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+     </script>
 </body> 
 </html>
