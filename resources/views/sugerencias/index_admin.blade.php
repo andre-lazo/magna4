@@ -73,5 +73,6 @@
           </table>
          
     </div>
+    {{$sugerencias->links()}}
    </section>
 @endsection

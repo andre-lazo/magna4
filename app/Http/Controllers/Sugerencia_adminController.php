@@ -16,7 +16,8 @@ class Sugerencia_adminController extends Controller
     {
         if($request){
             $query=trim($request->get('search'));
-            $sugerencias=Sugerencia::where('nombre','LIKE','%'.$query.'%');
+            $sugerencias=Sugerencia::where('nombre','LIKE','%'.$query.'%')->orderby('id','asc')
+            ->simplepaginate(5);
             return \view('sugerencias.index_admin',['sugerencias'=>$sugerencias]);
         }else{
             $sugerencias=Sugerencia::all();
