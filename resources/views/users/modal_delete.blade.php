@@ -17,7 +17,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar </button>
         
-        {!! Form::open(['action'=>[[App\Http\Controllers\UserController::class,'destroy'],$user->id], 'method'=>'delete']) !!}
+        {!! Form::open(['action'=>[[App\Http\Controllers\UserController::class,'destroy'],Crypt::encrypt($user->id)], 'method'=>'delete']) !!}
         {{FORM::token()}}
         <button type="submit" class="btn btn-primary">Si</button>
         

@@ -120,7 +120,7 @@ class UserController extends Controller
     
     public function destroy($id)
     {
-        $usuario=User::findOrFail($id);
+        $usuario=User::findOrFail(Crypt::decrypt($id));
         $usuario->delete();
         return redirect('user')->with('success','Usuario '.$usuario->name.' Borrado correctamente');
     }
