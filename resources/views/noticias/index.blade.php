@@ -6,7 +6,7 @@
 </style>
 @section('content')
     @include('noticias.model_create')
-  <div>
+  <div >
      
     <a id="inicio" href="" data-toggle="modal" data-target="#noticia_nueva" class=" ml-3 mt-5 btn btn-outline-danger"><i class="fas fa-calendar-plus"></i> Añadir Noticias</a>
     <h1 class="ml-3 mt-4 " >ULTIMAS NOTICIAS</h1>
@@ -17,10 +17,10 @@
           
     
     </section>
-  <section class="ml-5  mt-5 mr-5">
-    <div class="row">
+  <section class="ml-5  mt-5 mr-5 bg-secondary">
+    <div class="row ">
         <div class="col-xs-12 col-lg-6">
-            <img src="{{asset('img/'.$noticia->imagen)}}" width="100%" height="100%">
+            <img src="{{asset('img/'.$noticia->imagen)}}" width="100%" height="100%" >
         </div>
         <div class="col-xs-12 col-lg-6">
             <h1 class="text-center">NOTICIA: {{$noticia->titulo}}</h1>
