@@ -110,11 +110,7 @@
     </div>
   </div>
   
-  <script type="text/javascript">
- $(function(){
-  $("#norm").modal();
- });
-</script>
+
 </form>   
 
 @endsection
