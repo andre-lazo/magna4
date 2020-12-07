@@ -44,6 +44,12 @@
                   <option selected value="SOLUCIONADO">SOLUCIONADO</option>
                 </select>
               </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Observacion:</label>
+                <textarea  maxlength="300" class="form-control" name="observacion" id="message-text"></textarea>
+                <center><small class="text-center" style="color: red">MAXIMO 300 LETRAS</small></center>
+
+              </div>
             
           </div>
           <div class="modal-footer">

@@ -81,6 +81,7 @@ class Sugerencia_adminController extends Controller
     {
         $sugerencia=Sugerencia::findOrFail($id);
         $sugerencia->estado=$request->get('estado');
+        $sugerencia->observacion=$request->get('observacion');
         $sugerencia->update();
         return \redirect('/sugerencia');
 

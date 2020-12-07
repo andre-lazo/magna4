@@ -53,21 +53,21 @@
                 <label for="message-text"  class="col-form-label">Fecha fin:</label>
                 <input type="date" value="{{$alicuota->fecha_final}}"  name="fecha_fin" class="form-control" id="recipient-name">
                 <label for="message-text"  class="col-form-label">Cuotas totales:</label>
-                <input type="number" step="any" min="{{$alicuota->cuotas_totales}}" value="{{$alicuota->cuotas_totales}}" name="cuotas_totales" onkeyup="restar1();" onkeypress=" return solonum(event)"  class="form-control" id="cuotas_totales">
+                <input readonly type="number" step="any" min="{{$alicuota->cuotas_totales}}" value="{{$alicuota->cuotas_totales}}" name="cuotas_totales" onkeyup="restar1();" onkeypress=" return solonum(event)"  class="form-control" id="cuotas_totales">
                 <label for="message-text" class="col-form-label">Valor total:</label>
-                <input type="number" step="any" min="{{$alicuota->valor_total}}" value="{{$alicuota->valor_total}}"  name="valor_total" onkeyup="restar2();" onkeypress=" return solonum(event)" class="form-control" id="valor_total">
+                <input readonly type="number" step="any" min="{{$alicuota->valor_total}}" value="{{$alicuota->valor_total}}"  name="valor_total" onkeyup="restar2();" onkeypress=" return solonum(event)" class="form-control" id="valor_total">
                 <label for="message-text" class="col-form-label">Cuotas pagadas:</label>
-                <input type="number" step="any" min="{{$alicuota->cuotas_pagadas}}" value="{{$alicuota->cuotas_pagadas}}" name="cuotas_pagadas" onkeyup="restar1();" onkeypress=" return solonum(event)" class="form-control" id="cuotas_pagadas">
+                <input type="number" step="any" min="{{$alicuota->cuotas_pagadas}}" value="{{$alicuota->cuotas_pagadas}}" name="cuotas_pagadas" onkeyup="restar1();" onkeypress=" return solonum(event)" onchange="restar1()" class="form-control" id="cuotas_pagadas">
                 <label for="message-text" class="col-form-label">Valor pagado:</label>
-                <input type="number" step="any" min="{{$alicuota->valor_pagado}}" value="{{$alicuota->valor_pagado}}" name="valor_pagado"  onkeyup="restar2();" onkeypress=" return solonum(event)" class="form-control" id="valor_pagado">
+                <input type="number" step="any" min="{{$alicuota->valor_pagado}}" value="{{$alicuota->valor_pagado}}" name="valor_pagado"  onkeyup="restar2();" onkeypress=" return solonum(event)" onchange="restar2()"  class="form-control" id="valor_pagado">
                 <label for="message-text" class="col-form-label">Cuotas adeudadas: </label>
                 <input type="number" step="any"" value="{{$alicuota->cuotas_adeudadas}}" name="cuotas_adeudadas" readonly="readonly" id="total"onkeypress=" return solonum(event)"  class="form-control" >
                 <label for="message-text" class="col-form-label">Valor Adeudado:</label>
                 <input id="total2" type="number" step="any" " value="{{$alicuota->valor_adeudado}}" name="valor_adeudado" readonly="readonly" onkeypress=" return solonum(event)"class="form-control"  >
               </div>
-             
-              <button type="submit" class="btn btn-primary"><i class="fas fa-save"> Guardar</i></button>
-              <button type="reset" class="btn btn-danger"><i class="fas fa-window-close"> Cancelar</i> </button>
+              <button type="button" onclick="aumento()" class="btn btn-success"><i class="fas fa-plus-square"></i> Aumento</button>
+              <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
+              <button type="reset" class="btn btn-danger"><i class="fas fa-window-close"></i> Cancelar </button>
       
             </form>
       
@@ -111,5 +111,18 @@
             }
            
            
+        }
+        function aumento(){
+          
+          var valor_cuota=parseFloat($("#cuotas_totales").val());
+          var valor=parseFloat($("#valor_total").val());
+          valor_cuota=valor_cuota+1;
+          valor=valor+50;
+         
+          $("#cuotas_totales").val(valor_cuota);
+          $("#valor_total").val(valor);
+          this.restar1();
+          this.restar2();
+          swal("Recordatorio","Recuerde actualizar la Fecha final")
         }
 </script>

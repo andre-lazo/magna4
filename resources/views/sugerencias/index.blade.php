@@ -43,6 +43,9 @@
                 <h5 class="card-title">Fecha de Creacion: <b> {{$sugerencia->created_at}}</b></h5>
                 <p class="card-text">{{$sugerencia->descripcion}}</p>
                 <p class="card-text"><b>Estado: {{$sugerencia->estado}}</b></p>
+                @if ($sugerencia->observacion!=null)
+                <p class="card-text text-danger"><b>Respuesta de administracion: {{$sugerencia->observacion}}</b></p>
+                @endif
             </div>
                 <div class="card-footer">
                    
