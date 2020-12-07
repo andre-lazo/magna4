@@ -51,6 +51,7 @@ Route::get('/', function (Request $request) {
     Route::resource('campo', 'App\Http\Controllers\Campos_adminController');
     Route::resource('cancha1', 'App\Http\Controllers\Cancha1_adminController');
     Route::resource('cancha2', 'App\Http\Controllers\Cancha2_adminController');
+    Route::resource('sugerencia', 'App\Http\Controllers\Sugerencia_adminController');
 
 
        });
@@ -70,5 +71,7 @@ Route::get('/', function (Request $request) {
     Route::resource('campos', 'App\Http\Controllers\CamposController');
     Route::resource('futbols', 'App\Http\Controllers\FutbolsController');
     Route::resource('configuracion_cliente', 'App\Http\Controllers\ConfiguracionController');
+    Route::resource('sugerencias', 'App\Http\Controllers\SugerenciaController');
+
            });
     

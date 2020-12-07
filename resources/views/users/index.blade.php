@@ -28,7 +28,7 @@
 
   <form class="form-inline ml-3 " >
     <div class="input-group input-group-sm bg-secondary">
-        <input class="form-control form-control-navbar" name="search" type="search" placeholder="Search"
+        <input class="form-control form-control-navbar" name="search" type="search" placeholder="Buscar por apellido"
             aria-label="Search">
         <div class="input-group-append">
             <button class="btn btn-navbar" type="submit">
@@ -36,6 +36,9 @@
             </button>
         </div>
     </div>
+    <button class="btn btn-primary ml-5" type="submit">
+      Cargar todo
+  </button>
 </form>
 
 @if ($search ?? '')
@@ -63,7 +66,7 @@
             @include('users.modal_delete')
             <tr>
                 <th scope="row" class="text-center">{{$user->id}}</th>
-                <td class="text-center">{{$user->name    }}</td>
+                <td class="text-center">{{$user->name    }} {{$user->apellido   }}</td>
                 <td class="text-center">{{$user->email   }}</td>
                 <td class="text-center">{{$user->residencia_id   }}</td>
 

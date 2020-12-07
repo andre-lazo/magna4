@@ -20,7 +20,7 @@
    
  <style>
    .flotar{
-     margin-left: 620px;
+     margin-left:80%;
    }
    @media screen and (max-width:800px){
     .flotar{
@@ -53,6 +53,9 @@
          <li class="nav-item active ml-3">
            <a class="nav-link" href="{{route('alicuota.index')}}">Alicuotas</a>
          </li>
+         <li class="nav-item active ml-3">
+          <a class="nav-link" href="{{route('sugerencia.index')}}">Sugerencias</a>
+        </li>
          <li class="nav-item dropdown ml-3">
           <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reservas</a>
           <div class="dropdown-menu  bg-dark "> 
@@ -63,6 +66,7 @@
             <a class="dropdown-item  " href="{{route('campo.index')}}"><i class="fas fa-futbol"></i> Canchas de Cesped</a>
           </div>
         </li>
+       
          <li class="flotar nav-item dropdown  active">
            <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->email}}</a>
            <div class="dropdown-menu bg-dark"> 

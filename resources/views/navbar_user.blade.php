@@ -18,7 +18,7 @@
     @yield('scripts')
  <style>
    .flotar{
-     margin-left: 620px;
+     margin-left: 110%;
    }
    @media screen and (max-width:800px){
     .flotar{
@@ -70,6 +70,8 @@
          <div class="dropdown-menu bg-dark"> 
            <a class="dropdown-item " href="{{route('user_cliente.show',Crypt::encrypt(Auth::user()->id))}}"><i class="fas fa-user"> </i> Perfil</a>
            <a class="dropdown-item " href="{{route('configuracion_cliente.index')}}"><i class="fas fa-user-cog"></i> Configuracion</a>
+           <a class="dropdown-item " href="{{route('sugerencias.index')}}"><i class="fas fa-sms"></i> Sugerencias</a>
+
            <form class="nav-link" method="POST" action="{{ route('logout') }}">
              @csrf
  

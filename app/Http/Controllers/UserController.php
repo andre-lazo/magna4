@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         if($request){
             $query=trim($request->get('search'));
-            $users=User::where('name','LIKE','%'.$query.'%')->orderby('id','asc')
+            $users=User::where('apellido','LIKE','%'.$query.'%')->orderby('id','asc')
             ->simplepaginate(5);
             return view('users.index',['users'=>$users,'search'=>$query]);
         }

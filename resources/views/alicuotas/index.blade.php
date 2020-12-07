@@ -6,13 +6,21 @@
           background-size: cover; 
           
       }
+       .my-custom-scrollbar {
+          position: relative;
+          height: 40%;
+          overflow: auto;
+          }
+          .table-wrapper-scroll-y {
+          display: block;
+          }
 </style>
 @section('content')
 @include('alicuotas.modal_create')
 <section class=" pt-5 container pb-3" id="cuerpo">
     <h1 class="text-center mt-3 mb-5 text-white font-weight-bold">ADMINISTRACION DE REGISTRO DE ALICUOTAS</h1>
        <center><a href="" class="btn btn-primary mb-4" data-toggle="modal" data-whatever="@mdo" data-target="#exampleModal2"><i class="fas fa-calendar-plus"></i>  Añadir nuevo Registro</a></center>
-    <table class="table table-dark table-hover ">
+    <table class="table table-wrapper-scroll-y table-dark table-hover my-custom-scrollbar ">
         <thead>
           <tr>
             <th scope="col">#Residencia_ID</th>
