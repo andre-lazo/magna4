@@ -10,13 +10,8 @@ class EventosController extends Controller
     
     public function index(Request $request)
     {
-        $arreglo= Evento::all();
-        $eventos=array();
-       foreach($arreglo as $item){
-        if($item->cedula==$request->user()->cedula){
-            array_push($eventos,$item);
-        }
-       }
+        $eventos= Evento::all();
+       
         return view('eventos.index', ['eventos'=>$eventos]);
     }
 

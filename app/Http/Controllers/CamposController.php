@@ -16,13 +16,8 @@ class CamposController extends Controller
     public function index(Request $request)
     {
        
-        $arreglo= Campo::all();
-        $campos=array();
-       foreach($arreglo as $item){
-        if($item->cedula==$request->user()->cedula){
-            array_push($campos,$item);
-        }
-       }
+        $campos= Campo::all();
+       
         return view('campos.index', ['campos'=>$campos]);
     }
 

@@ -9,13 +9,8 @@ class CanchasController extends Controller
 {
     public function index(Request $request)
     {
-        $arreglo= Cancha::all();
-        $canchas=array();
-       foreach($arreglo as $item){
-        if($item->cedula==$request->user()->cedula){
-            array_push($canchas,$item);
-        }
-       }
+        $canchas= Cancha::all();
+       
         return view('canchas.index', ['canchas'=>$canchas]);
     }
 
