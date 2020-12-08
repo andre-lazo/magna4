@@ -16,11 +16,12 @@
     <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
     <script src="{{asset('css/bootstrap.min.js')}}" ></script>
     <script src="{{asset('js/sweetalert.min.js')}}" ></script>
+    <script src="{{asset('js/validaciones.js')}}" ></script>
 
     @yield('scripts')
  <style>
    .flotar{
-     margin-left: 110%;
+     margin-left: 70%;
    }
    @media screen and (max-width:800px){
     .flotar{
@@ -64,6 +65,13 @@
             <a class="dropdown-item " href="{{route('canchas.index')}}"><i class="fas fa-futbol"></i> Cancha Cementeto 1</a>
             <a class="dropdown-item " href="{{route('campos.index')}}"><i class="fas fa-futbol"></i> Cancha Cemento 2</a>
             <a class="dropdown-item " href="{{route('futbols.index')}}"><i class="fas fa-futbol"></i> Cancha Futbol</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown ml-3">
+          <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Emprendedores</a>
+          <div class="dropdown-menu  bg-dark"> 
+          <a class="dropdown-item" href="{{route('emprendedores.index')}}"><i class="far fa-newspaper"></i> Publicaciones</a>
+            <a class="dropdown-item " href="{{route('emprendedores.create')}}"><i class="fas fa-folder-plus"></i> Mis Publicaciones</a>
           </div>
         </li>
        

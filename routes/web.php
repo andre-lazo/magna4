@@ -52,7 +52,7 @@ Route::get('/', function (Request $request) {
     Route::resource('cancha1', 'App\Http\Controllers\Cancha1_adminController');
     Route::resource('cancha2', 'App\Http\Controllers\Cancha2_adminController');
     Route::resource('sugerencia', 'App\Http\Controllers\Sugerencia_adminController');
-
+    Route::resource('emprendedor', 'App\Http\Controllers\Emprendedores_adminController');
 
        });
         
@@ -72,6 +72,7 @@ Route::get('/', function (Request $request) {
     Route::resource('futbols', 'App\Http\Controllers\FutbolsController');
     Route::resource('configuracion_cliente', 'App\Http\Controllers\ConfiguracionController');
     Route::resource('sugerencias', 'App\Http\Controllers\SugerenciaController');
+    Route::resource('emprendedores', 'App\Http\Controllers\EmprendedoreController');
 
            });
     

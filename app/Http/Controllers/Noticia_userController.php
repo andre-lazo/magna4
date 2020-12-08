@@ -14,6 +14,7 @@ class Noticia_userController extends Controller
     public function index()
     {
         $noticia=Noticia::all();
+        $noticia= $noticia->sortByDesc('id');
         return view('user_cliente.noticia',['noticias'=>$noticia]);
     }
 

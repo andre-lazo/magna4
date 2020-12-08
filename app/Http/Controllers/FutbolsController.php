@@ -10,7 +10,7 @@ class FutbolsController extends Controller
     public function index(Request $request)
     {
        
-        $futbols= Futbol::all();
+        $futbols= Futbol::all()->where('cedula','=',$request->user()->cedula);   ;
        
         return view('futbols.index', ['futbols'=>$futbols]);
     }
@@ -123,13 +123,8 @@ class FutbolsController extends Controller
 
     public function show(Request $request)
     {
-        $arreglo= Futbol::all();
-        $futbols=array();
-       foreach($arreglo as $item){
-        if($item->cedula==$request->user()->cedula){
-            array_push($futbols,$item);
-        }
-       }
+        $futbols= Futbol::all();
+       
         $data['futbols'] =$futbols;
         return response()->json($data['futbols']);
 

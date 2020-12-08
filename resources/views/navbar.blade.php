@@ -17,11 +17,12 @@
     <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
     <script src="{{asset('css/bootstrap.min.js')}}" ></script>
     <script src="{{asset('js/sweetalert.min.js')}}" ></script>
-    
+    <script src="{{asset('js/validaciones.js')}}" ></script>
+
    
  <style>
    .flotar{
-     margin-left:80%;
+     margin-left:50%;
    }
    @media screen and (max-width:800px){
     .flotar{
@@ -56,6 +57,9 @@
          </li>
          <li class="nav-item active ml-3">
           <a class="nav-link" href="{{route('sugerencia.index')}}">Sugerencias</a>
+        </li>
+        <li class="nav-item active ml-3">
+          <a class="nav-link" href="{{route('emprendedor.index')}}">Emprendimientos</a>
         </li>
          <li class="nav-item dropdown ml-3">
           <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reservas</a>

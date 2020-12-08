@@ -10,9 +10,8 @@ class AlbercasController extends Controller
     public function index(Request $request)
     {
        
-        $albercas= Alberca::all();
-        
-        return view('albercas.index', ['albercas'=>$albercas]);
+        $usuario= Alberca::all()->where('cedula','=',$request->user()->cedula);        
+        return view('albercas.index', ['usuario'=>$usuario]);
     }
 
     
@@ -123,13 +122,8 @@ class AlbercasController extends Controller
 
     public function show(Request $request)
     {
-        $arreglo= Alberca::all();
-        $albercas=array();
-       foreach($arreglo as $item){
-        if($item->cedula==$request->user()->cedula){
-            array_push($albercas,$item);
-        }
-       }
+        $albercas= Alberca::all();
+      
         $data['albercas'] =$albercas;
         return response()->json($data['albercas']);
 

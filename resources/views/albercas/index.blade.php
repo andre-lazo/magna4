@@ -57,7 +57,7 @@
     </tr>
   </thead>
   <tbody>
-    @foreach($albercas as $alberca)
+    @foreach($usuario as $alberca)
     @include('albercas.model_delete')
     <tr>
       <th scope="row">{{$alberca->id}}</th>

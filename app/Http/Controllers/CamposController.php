@@ -16,7 +16,7 @@ class CamposController extends Controller
     public function index(Request $request)
     {
        
-        $campos= Campo::all();
+        $campos= Campo::all()->where('cedula','=',$request->user()->cedula);   
        
         return view('campos.index', ['campos'=>$campos]);
     }
@@ -144,13 +144,9 @@ class CamposController extends Controller
     public function show(Request $request)
     {
         //RECOLECTAMOS TODA LA INFORMACION GUARDADA EN LA BASE DE DATOS
-        $arreglo= Campo::all();
-        $campos=array();
-       foreach($arreglo as $item){
-        if($item->cedula==$request->user()->cedula){
-            array_push($campos,$item);
-        }
-       }
+        $campos= Campo::all();
+      
+      
         $data['campos'] =$campos;
         return response()->json($data['campos']);
     }

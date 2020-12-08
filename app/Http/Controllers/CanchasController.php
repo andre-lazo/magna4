@@ -9,7 +9,7 @@ class CanchasController extends Controller
 {
     public function index(Request $request)
     {
-        $canchas= Cancha::all();
+        $canchas= Cancha::all()->where('cedula','=',$request->user()->cedula);   
        
         return view('canchas.index', ['canchas'=>$canchas]);
     }
@@ -133,13 +133,9 @@ class CanchasController extends Controller
 
     public function show(Request $request)
     {
-        $arreglo= Cancha::all();
-        $canchas=array();
-       foreach($arreglo as $item){
-        if($item->cedula==$request->user()->cedula){
-            array_push($canchas,$item);
-        }
-       }
+        $canchas= Cancha::all();
+       
+       
         $data['canchas'] =$canchas;
         return response()->json($data['canchas']);
 
