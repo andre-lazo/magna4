@@ -25,8 +25,8 @@
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label">DESCRIPCION:</label>
-                <textarea required maxlength="355" class="form-control" name="descripcion" id="message-text"></textarea>
-                <center><small class="text-center" style="color: red">MAXIMO 355 LETRAS</small></center>
+                <textarea required maxlength="499" class="form-control" name="descripcion" id="message-text"></textarea>
+                <center><small class="text-center" style="color: red">MAXIMO 500 LETRAS</small></center>
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label">CATEGORIA:</label>

@@ -11,7 +11,7 @@
             <form>
               <div class="form-group">
                 @if ($emprendedor->valor!=NULL)
-                <p class="card-text h5">VALOR: {{$emprendedor->valor}}</p>
+                <p class="card-text h5">VALOR:$ {{$emprendedor->valor}}</p>
                 @endif
                 <p>{{$emprendedor->descripcion}}</p>
               </div>

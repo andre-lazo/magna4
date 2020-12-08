@@ -24,7 +24,7 @@
     @include('emprendedores.modal_delete')
     <div class="col-xs-12 col-lg-4" style="float: right;">
         <div class="card" style="width:100%">
-            <img src="{{asset('img/'.$emprendedor->imagen)}}" width="100%" height="300px" class="card-img-top" alt="">
+            <img src="{{asset('/img_emprendedor/'.$emprendedor->imagen)}}" width="100%" height="300px" class="card-img-top" alt="">
             <div class="card-body">
              <a href="" class="card-title h5 text-dark" style="text-decoration: none;">TITULO: {{$emprendedor->titulo}} </a>
               <p class="card-text">{{$emprendedor->descripcion}}</p>
