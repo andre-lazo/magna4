@@ -14,6 +14,7 @@ class Alberca_adminController extends Controller
     public function index()
     {
         $eventos = Alberca::all();
+        $eventos= $eventos->sortByDesc('id');
 
         return view('reservas.alberca', ['eventos'=>$eventos]);
     }

@@ -97,13 +97,17 @@
      <section class="content mt-5">
      @yield('content')
      </section>
-     <center>
+     
+    
        <footer class="lead bg-dark text-white mt-5 p-5" width="100%" >
+        
+        <center>
         Correo electrónico: aso.magnavillaclub@gmail.com <br> 
         Teléfono administración Magna:‎ +593 4-275-3351. <br>
         Teléfono Garita Magna: +593 4-275-3361. <br>
         Celular Garita Magna: +593 99 989 6250.  
-      </footer></center>
+      </center>
+      </footer>
       @include('sweet::alert')
 
       <script>

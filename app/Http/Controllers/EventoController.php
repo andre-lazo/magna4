@@ -11,6 +11,8 @@ class EventoController extends Controller
     public function index()
     {
         $evento=Evento::all();
+        $evento=$evento->sortByDesc('id');
+
         return view('reservas.salon',['eventos'=>$evento]);
     }
 
@@ -27,6 +29,8 @@ class EventoController extends Controller
     public function show($id)
     {
         $evento= Evento::findOrFail(Crypt::decrypt($id));
+        $evento=$evento->sortByDesc('id');
+
         return view('reservas.view',['evento'=>$evento]);
     }
 

@@ -36,9 +36,13 @@
             </button>
         </div>
     </div>
-    <button class="btn btn-primary ml-5" type="submit">
+    <button class="btn btn-success ml-5" type="submit">
+      Buscar
+  </button>
+    <button class="btn btn-primary ml-2" type="submit" onclick="click()">
       Cargar todo
   </button>
+   
 </form>
 
 @if ($search ?? '')

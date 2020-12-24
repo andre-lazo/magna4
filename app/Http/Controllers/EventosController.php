@@ -11,7 +11,8 @@ class EventosController extends Controller
     public function index(Request $request)
     {
         $eventos= Evento::all()->where('cedula','=',$request->user()->cedula);   ;
-       
+        $eventos=$eventos->sortByDesc('id');
+
         return view('eventos.index', ['eventos'=>$eventos]);
     }
 
@@ -111,7 +112,8 @@ class EventosController extends Controller
     public function show(Request $request)
     {
         $eventos= Evento::all();
-      
+        $eventos=$eventos->sortByDesc('id');
+
         $data['eventos'] =$eventos;
         return response()->json($data['eventos']);
     }

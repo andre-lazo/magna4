@@ -15,7 +15,7 @@
   <section class="ml-5  mt-5 mr-5">
     <div class="row">
         <div class="col-xs-12 col-lg-6">
-            <img src="{{asset('img/'.$noticia->imagen)}}" width="100%" height="100%">
+            <img src="{{asset('img/'.$noticia->imagen)}}" width="100%" height="350px">
         </div>
         <div class="col-xs-12 col-lg-6">
             <h1 class="text-center">NOTICIA: {{$noticia->titulo}}</h1>

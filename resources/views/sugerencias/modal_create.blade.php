@@ -1,5 +1,5 @@
 <div class="container pt-5">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir Sugerencia</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-folder-plus"></i> Añadir Sugerencia</button>
     </div>
     
     

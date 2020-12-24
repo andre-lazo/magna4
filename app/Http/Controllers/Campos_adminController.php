@@ -15,6 +15,8 @@ class Campos_adminController extends Controller
     public function index()
     {
         $evento= Futbol::all();
+        $evento=$evento->sortByDesc('id');
+
         return view('reservas.cancha_cesped',['eventos'=>$evento]);
     }
 

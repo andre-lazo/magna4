@@ -19,8 +19,9 @@ class UserController extends Controller
     {
         if($request){
             $query=trim($request->get('search'));
-            $users=User::where('apellido','LIKE','%'.$query.'%')->orderby('id','asc')
+            $users=User::where('apellido','LIKE','%'.$query.'%')->orderby('residencia_id','asc')
             ->simplepaginate(5);
+            
             return view('users.index',['users'=>$users,'search'=>$query]);
         }
     }
@@ -44,13 +45,26 @@ class UserController extends Controller
         $usuario->residencia_id=$request->get('residencia');
         $usuario->apellido=strtoupper($request->get('apellido'));
         $usuario->rol=$request->get('rol');
+       
         if($request->hasFile('imagen'))
         {
-
+           
             $file=$request->imagen;
-            $file->move(public_path() . '/img',$file->getClientOriginalName());
-            $usuario->imagen=$file->getClientOriginalName();
+            $im= User::all();  
+            $contador=0;    
+            foreach($im as $i){
+                if(strpos($i, $file->getClientOriginalName()) !== false){$contador++;}
+            }      
+            if(!$im>0){
+                $file->move(public_path() . '/img_emprendedor',$file->getClientOriginalName());
+                $usuario->imagen=$file->getClientOriginalName();
+            }else{
+                $file->move(public_path() . '/img_emprendedor',$file->getClientOriginalName().$contador);
+                $usuario->imagen=$file->getClientOriginalName().$contador;
+            }
+           
         }
+
         $rol_numbre=0;
         if($usuario->rol=="cliente_master2"){
             $rol_numbre=8;
@@ -95,11 +109,24 @@ class UserController extends Controller
         $usuario->residencia_id=$request->get('residencia');
         $usuario->apellido=strtoupper($request->get('apellido'));
        
+        
         if($request->hasFile('imagen'))
         {
+           
             $file=$request->imagen;
-            $file->move(public_path() . '/img',$file->getClientOriginalName());
-            $usuario->imagen=$file->getClientOriginalName();
+            $im= User::all();  
+            $contador=0;    
+            foreach($im as $i){
+                if(strpos($i, $file->getClientOriginalName()) !== false){$contador++;}
+            }      
+            if(!$im>0){
+                $file->move(public_path() . '/img',$file->getClientOriginalName());
+                $usuario->imagen=$file->getClientOriginalName();
+            }else{
+                $file->move(public_path() . '/img',$file->getClientOriginalName().$contador);
+                $usuario->imagen=$file->getClientOriginalName().$contador;
+            }
+           
         }
         $pass=$request->get('password');
   

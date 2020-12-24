@@ -25,7 +25,8 @@
               <div class="form-group">
                 @if ($sugerencia->imagen!=null)
                 <div>Evidencia Fotografica: </div>
-                <img src="{{asset('img_sugerencia/'.$sugerencia->imagen)}}" width="100%" alt="">  
+                <center>                <img src="{{asset('img_sugerencia/'.$sugerencia->imagen)}}" width="70%" height="200px" alt="">  
+                </center>
                 @endif
               </div>
               <div class="form-group">
@@ -46,7 +47,7 @@
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label">Observacion:</label>
-                <textarea  maxlength="300" class="form-control" name="observacion" id="message-text"></textarea>
+                <textarea  maxlength="300" class="form-control" name="observacion" id="message-text">{{$sugerencia->observacion}}</textarea>
                 <center><small class="text-center" style="color: red">MAXIMO 300 LETRAS</small></center>
 
               </div>

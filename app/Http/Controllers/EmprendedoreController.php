@@ -58,6 +58,7 @@ class EmprendedoreController extends Controller
             if($item->categoria=='SERVICIOS'){array_push($servicios,$item);}
           
         }
+        $emprendedores= $emprendedores->sortByDesc('updated_at');
         return view('emprendedores.publicidad',['emprendedores'=>$emprendedores,
         'mano'=>$mano,
         'limpieza'=>$limpieza,
@@ -86,7 +87,7 @@ class EmprendedoreController extends Controller
     public function create(Request $request)
     {
         $emprendedores=Emprendedore::all()->where('cedula','=',$request->user()->cedula);
-        $emprendedores= $emprendedores->sortByDesc('id');
+        $emprendedores= $emprendedores->sortByDesc('updated_at');
         return view('emprendedores.index',['emprendedores'=>$emprendedores]);
     }
 
@@ -116,9 +117,21 @@ class EmprendedoreController extends Controller
 
         if($request->hasFile('imagen'))
         {
+           
             $file=$request->imagen;
-            $file->move(public_path() . '/img_emprendedor',$file->getClientOriginalName());
-            $emprendedor->imagen=$file->getClientOriginalName();
+            $im= Emprendedore::all();  
+            $contador=0;    
+            foreach($im as $i){
+                if(strpos($i, $file->getClientOriginalName()) !== false){$contador++;}
+            }      
+            if(!$contador>0){
+                $file->move(public_path() . '/img_emprendedor',$file->getClientOriginalName());
+                $emprendedor->imagen=$file->getClientOriginalName();
+            }else{
+                $file->move(public_path() . '/img_emprendedor',$file->getClientOriginalName().$contador);
+                $emprendedor->imagen=$file->getClientOriginalName().$contador;
+            }
+           
         }
        
         $emprendedor->save();
@@ -150,7 +163,7 @@ class EmprendedoreController extends Controller
     { 
         $this->validate(request(),['titulo'=>['required']]);
         $this->validate(request(),['descripcion'=>['required']]);
-        $this->validate(request(),['imagen'=>['required']]);
+        
         
 
 
@@ -161,11 +174,24 @@ class EmprendedoreController extends Controller
         $emprendedor->valor=$request->get('valor');
         $emprendedor->telefono=$request->get('telefono');
 
+       
         if($request->hasFile('imagen'))
         {
+           
             $file=$request->imagen;
-            $file->move(public_path() . '/img_emprendedor',$file->getClientOriginalName());
-            $emprendedor->imagen=$file->getClientOriginalName();
+            $im= Emprendedore::all();  
+            $contador=0;    
+            foreach($im as $i){
+                if(strpos($i, $file->getClientOriginalName()) !== false){$contador++;}
+            }      
+            if(!$contador>0){
+                $file->move(public_path() . '/img_emprendedor',$file->getClientOriginalName());
+                $emprendedor->imagen=$file->getClientOriginalName();
+            }else{
+                $file->move(public_path() . '/img_emprendedor',$file->getClientOriginalName().$contador);
+                $emprendedor->imagen=$file->getClientOriginalName().$contador;
+            }
+           
         }
        
         $emprendedor->update();

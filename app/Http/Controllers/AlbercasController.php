@@ -10,7 +10,8 @@ class AlbercasController extends Controller
     public function index(Request $request)
     {
        
-        $usuario= Alberca::all()->where('cedula','=',$request->user()->cedula);        
+        $usuario= Alberca::all()->where('cedula','=',$request->user()->cedula);   
+        $usuario=$usuario->sortByDesc('id');
         return view('albercas.index', ['usuario'=>$usuario]);
     }
 

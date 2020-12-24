@@ -11,7 +11,8 @@ class FutbolsController extends Controller
     {
        
         $futbols= Futbol::all()->where('cedula','=',$request->user()->cedula);   ;
-       
+        $futbols=$futbols->sortByDesc('id');
+
         return view('futbols.index', ['futbols'=>$futbols]);
     }
 
@@ -124,7 +125,8 @@ class FutbolsController extends Controller
     public function show(Request $request)
     {
         $futbols= Futbol::all();
-       
+        $futbols=$futbols->sortByDesc('id');
+
         $data['futbols'] =$futbols;
         return response()->json($data['futbols']);
 

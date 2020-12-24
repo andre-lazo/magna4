@@ -49,13 +49,25 @@ class SugerenciaController extends Controller
         $sugerencia->titulo=$request->get('titulo');
         $sugerencia->descripcion=$request->get('descripcion');
        
+       
         if($request->hasFile('imagen'))
         {
+           
             $file=$request->imagen;
-            $file->move(public_path() . '/img_sugerencia',$file->getClientOriginalName());
-            $sugerencia->imagen=$file->getClientOriginalName();
+            $im= Sugerencia::all();  
+            $contador=0;    
+            foreach($im as $i){
+                if(strpos($i, $file->getClientOriginalName()) !== false){$contador++;}
+            }      
+            if(!$im>0){
+                $file->move(public_path() . '/img_sugerencia',$file->getClientOriginalName());
+                $sugerencia->imagen=$file->getClientOriginalName();
+            }else{
+                $file->move(public_path() . '/img_sugerencia',$file->getClientOriginalName().$contador);
+                $sugerencia->imagen=$file->getClientOriginalName().$contador;
+            }
+           
         }
-       
         $sugerencia->save();
        
       

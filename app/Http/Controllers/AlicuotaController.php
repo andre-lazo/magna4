@@ -18,6 +18,7 @@ class AlicuotaController extends Controller
         $alicuota=Alicuota::all();
         $residencia=Residencia::all();
         $usuario=User::all();
+        $usuario=$usuario->sortByDesc('residencia_id');
         return \view('alicuotas.index',['alicuotas'=>$alicuota,'residencias'=>$residencia,'usuarios'=>$usuario]);
     }
 

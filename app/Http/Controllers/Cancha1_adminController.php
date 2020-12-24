@@ -15,6 +15,7 @@ class Cancha1_adminController extends Controller
     public function index()
     {
         $eventos = Cancha::all();
+        $evento=$evento->sortByDesc('id');
 
         return view('reservas.cancha_c1', ['eventos'=>$eventos]);
     }
@@ -49,6 +50,8 @@ class Cancha1_adminController extends Controller
     public function show($id)
     {
         $evento= Cancha::findOrFail(Crypt::decrypt($id));
+        $evento=$evento->sortByDesc('id');
+
         return view('reservas.view',['evento'=>$evento]);
     }
 

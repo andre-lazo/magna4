@@ -30,12 +30,25 @@ class NoticiaController extends Controller
         $noticia->titulo=$request->get('titulo');
         $noticia->contenido_previo=$request->get('previo');
         $noticia->contenido_completo=$request->get('completo');
+       
         if($request->hasFile('imagen'))
-      {
-          $file=$request->imagen;
-          $file->move(public_path() . '/img',$file->getClientOriginalName());
-          $noticia->imagen=$file->getClientOriginalName();
-      }
+        {
+           
+            $file=$request->imagen;
+            $im= Noticia::all();  
+            $contador=0;    
+            foreach($im as $i){
+                if(strpos($i, $file->getClientOriginalName()) !== false){$contador++;}
+            }      
+            if(!$im>0){
+                $file->move(public_path() . '/img',$file->getClientOriginalName());
+                $noticia->imagen=$file->getClientOriginalName();
+            }else{
+                $file->move(public_path() . '/img',$file->getClientOriginalName().$contador);
+                $noticia->imagen=$file->getClientOriginalName().$contador;
+            }
+           
+        }
       $noticia->save();
       return redirect('/noticia')->with('success','Noticia Registrada correctamente');
     }

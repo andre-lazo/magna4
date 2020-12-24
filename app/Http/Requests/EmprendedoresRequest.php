@@ -24,7 +24,7 @@ class EmprendedoresRequest extends FormRequest
     public function rules()
     {
         return [
-            'imagen'=>'required|mimes:jpeg,jpg,bmp,png'
+            'imagen'=>'mimes:jpeg,jpg,bmp,png'
         ];
     }
 }

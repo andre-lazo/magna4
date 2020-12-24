@@ -15,6 +15,9 @@ function solonum(e){
    
    
 }
+function click(){
+    $('#seacrh').val("");
+}
 function sololetra(e){
     key=e.keyCode || e.which;
     teclado=String.fromCharCode(key).toLowerCase();

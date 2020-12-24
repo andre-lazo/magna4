@@ -5,13 +5,15 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">NUEVA PUBLICACIÓN</h5>
+            <h5 class="modal-title" id="exampleModalLabel">EDITAR PUBLICACIÓN</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <form action="{{ route('emprendedores.update', $emprendedor->id) }}" method="POST" class="mx-auto" enctype="multipart/form-data">
+              @method('PATCH')
+              @csrf
               <div class="form-group">
                 <label for="recipient-name"  class="col-form-label">TITULO:</label>
                 <input required maxlength="90" type="text" class="form-control" value="{{$emprendedor->titulo}} "name="titulo" id="recipient-name">
@@ -25,7 +27,6 @@
               <div class="form-group">
                 <label for="message-text" class="col-form-label">CATEGORIA:</label>
                 <select name="categoria" id="" class="form-control">
-           
                     <option selected value="RESTAURANTE">RESTAURANTE</option>
                 <option selected value="TECNOLOGIA">TECNOLOGÍA</option>
                 <option selected value="ARTICULOS DE HOGAR">ARTÍCULOS DEL HOGAR</option>
@@ -42,9 +43,7 @@
                 <option selected value="ARTICULOS DE BELLEZA">ARTICULOS DE BELLEZA</option>
                 <option selected value="SERVICIOS">SERVICIOS</option>
                 <option selected value="MANO DE OBRA">MANO DE OBRA</option>
-                <option selected value="value="{{$emprendedor->categoria}}">{{$emprendedor->categoria}}</option>
-
-
+                <option selected value="{{$emprendedor->categoria}}">{{$emprendedor->categoria}}</option>
               </select>
               </div>
               <div class="form-group">
@@ -57,17 +56,18 @@
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label">IMAGEN:</label>
-                <input accept="image/*" required type="file" name="imagen" class="form-control">
+                <input accept="image/*"  type="file" name="imagen" class="form-control">
               </div>
               <center> @if($emprendedor->imagen!="")
                 <img src="{{asset('/img_emprendedor/'.$emprendedor->imagen)}}" alt="{{$emprendedor->imagen}}" height="100px" width="100px"> 
                 @endif</center>
-            </form>
+           
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">CERRAR</button>
             <button type="submit" class="btn btn-primary">GUARDAR CAMBIOS</button>
           </div>
+        </form>
         </div>
       </div>
     </div>

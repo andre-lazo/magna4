@@ -10,7 +10,8 @@ class CanchasController extends Controller
     public function index(Request $request)
     {
         $canchas= Cancha::all()->where('cedula','=',$request->user()->cedula);   
-       
+        $canchas=$canchas->sortByDesc('id');
+
         return view('canchas.index', ['canchas'=>$canchas]);
     }
 
@@ -134,8 +135,7 @@ class CanchasController extends Controller
     public function show(Request $request)
     {
         $canchas= Cancha::all();
-       
-       
+        $canchas=$canchas->sortByDesc('id');
         $data['canchas'] =$canchas;
         return response()->json($data['canchas']);
 

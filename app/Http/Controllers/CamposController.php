@@ -17,7 +17,8 @@ class CamposController extends Controller
     {
        
         $campos= Campo::all()->where('cedula','=',$request->user()->cedula);   
-       
+        $campos=$campos->sortByDesc('id');
+
         return view('campos.index', ['campos'=>$campos]);
     }
 
